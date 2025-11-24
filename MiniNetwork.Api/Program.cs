@@ -1,10 +1,15 @@
-﻿using Microsoft.OpenApi;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Models;
+using MiniNetwork.Application;
 using MiniNetwork.Infrastructure;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers();                
+// Controllers + Swagger
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
@@ -14,25 +19,75 @@ builder.Services.AddSwaggerGen(c =>
         Title = "MiniNetwork API",
         Version = "v1"
     });
+
+    // JWT cho swagger
+    var securityScheme = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Description = "Nhập 'Bearer {token}'",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT"
+    };
+
+    c.AddSecurityDefinition("Bearer", securityScheme);
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            securityScheme,
+            Array.Empty<string>()
+        }
+    });
 });
+
+// Application + Infrastructure
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+
+// JWT Authentication
+var jwtSection = builder.Configuration.GetSection("Jwt");
+var keyBytes = Encoding.UTF8.GetBytes(jwtSection["Key"]!);
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+
+            // TẠM THỜI TẮT 2 CÁI NÀY
+            ValidateIssuer = false,
+            ValidateAudience = false,
+
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+// Authorization
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("Admin"));
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-
-// Bật Swagger UI luôn cho dễ dev
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+// Middleware pipeline
+if (app.Environment.IsDevelopment())
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MiniNetwork API v1");
-    c.RoutePrefix = "swagger"; // => /swagger
-});
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();  // map tất cả controller
+app.MapControllers();
 
 app.Run();

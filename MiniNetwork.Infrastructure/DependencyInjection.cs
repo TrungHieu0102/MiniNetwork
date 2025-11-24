@@ -1,7 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MiniNetwork.Application.Interfaces.Repositories;
+using MiniNetwork.Application.Interfaces.Services;
+using MiniNetwork.Infrastructure.Auth;
 using MiniNetwork.Infrastructure.Persistence;
+using MiniNetwork.Infrastructure.Repositories;
+using MiniNetwork.Infrastructure.Uow;
 
 namespace MiniNetwork.Infrastructure;
 
@@ -11,7 +16,7 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        // Connection string trong appsettings.json
+        // DbContext
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         services.AddDbContext<MiniNetworkDbContext>(options =>
@@ -19,7 +24,20 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString);
         });
 
-        // Sau này: đăng ký repository, cache, v.v. ở đây
+        // JwtOptions (bind từ appsettings.json section "Jwt")
+        services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
+
+        // Repositories
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+
+        // UnitOfWork
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        // Services
+        services.AddScoped<IPasswordHasher, PasswordHasherService>();
+        services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
         return services;
     }
