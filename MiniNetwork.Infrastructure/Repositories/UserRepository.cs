@@ -36,4 +36,5 @@ public class UserRepository : EfRepository<User>, IUserRepository
     {
         return _dbSet.AnyAsync(u => u.NormalizedEmail == normalizedEmail, cancellationToken);
     }
+
 }

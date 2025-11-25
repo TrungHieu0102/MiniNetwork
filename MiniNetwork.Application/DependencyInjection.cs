@@ -7,9 +7,9 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        // Đăng ký các service ở Application
-        services.AddScoped<IAuthService, AuthService>();
 
+        services.AddScoped<IAuthService, AuthService>();
+        // AutoMapper
         return services;
     }
 }

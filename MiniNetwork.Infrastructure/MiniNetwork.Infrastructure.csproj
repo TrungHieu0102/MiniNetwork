@@ -1,6 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <None Remove="Email\Templates\ResetPasswordTemplate.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Email\Templates\ResetPasswordTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MiniNetwork.Application\MiniNetwork.Application.csproj" />
     <ProjectReference Include="..\MiniNetwork.Domain\MiniNetwork.Domain.csproj" />
   </ItemGroup>

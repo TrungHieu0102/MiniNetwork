@@ -15,6 +15,11 @@ public class AuthService : IAuthService
     private readonly IUnitOfWork _unitOfWork;
     private readonly IPasswordHasher _passwordHasher;
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
+    private readonly IUserTokenRepository _userTokenRepository;
+    private readonly IEmailSender _emailSender;
+    private readonly IEmailTemplateService _emailTemplateService;
+
+
 
     public AuthService(
         IUserRepository userRepository,
@@ -22,7 +27,10 @@ public class AuthService : IAuthService
         IRefreshTokenRepository refreshTokenRepository,
         IUnitOfWork unitOfWork,
         IPasswordHasher passwordHasher,
-        IJwtTokenGenerator jwtTokenGenerator)
+        IJwtTokenGenerator jwtTokenGenerator,
+         IUserTokenRepository userTokenRepository,
+         IEmailSender emailSender,
+         IEmailTemplateService emailTemplateService)
     {
         _userRepository = userRepository;
         _roleRepository = roleRepository;
@@ -30,6 +38,9 @@ public class AuthService : IAuthService
         _unitOfWork = unitOfWork;
         _passwordHasher = passwordHasher;
         _jwtTokenGenerator = jwtTokenGenerator;
+        _userTokenRepository = userTokenRepository;
+        _emailSender = emailSender;
+        _emailTemplateService = emailTemplateService;
     }
 
     // ========== REGISTER ==========
@@ -84,7 +95,6 @@ public class AuthService : IAuthService
         var refreshToken = new RefreshToken(user.Id, refreshTokenValue, refreshExpires, null);
         await _refreshTokenRepository.AddAsync(refreshToken, cancellationToken);
 
-        // 🔴 LÚC NÀY MỚI SAVE CHANGES MỘT LẦN
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         var response = new AuthResponse
@@ -129,7 +139,7 @@ public class AuthService : IAuthService
 
         if (!_passwordHasher.VerifyHashedPassword(user.PasswordHash, request.Password))
         {
-            return Result<AuthResponse>.Failure("Invalid credentials.");
+            return Result<AuthResponse>.Failure("Wrong password");
         }
 
         var roles = user.UserRoles
@@ -298,4 +308,83 @@ public class AuthService : IAuthService
 
         return Result<MeResponse>.Success(me);
     }
+    public async Task<Result> ForgotPasswordAsync(
+    ForgotPasswordRequest request,
+    CancellationToken cancellationToken = default)
+    {
+        var normalizedEmail = request.Email.Trim().ToUpperInvariant();
+        var user = await _userRepository.GetByEmailAsync(normalizedEmail, cancellationToken);
+
+        // Không lộ user tồn tại hay không
+        if (user is null)
+        {
+            return Result.Success();
+        }
+
+        // Tạo token reset
+        var tokenValue = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+        var expiresAt = DateTime.UtcNow.AddHours(1);
+
+        var token = new UserToken(
+            userId: user.Id,
+            token: tokenValue,
+            type: UserTokenType.PasswordReset,
+            expiresAt: expiresAt);
+
+        await _userTokenRepository.AddTokenAsync(token, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        // 🔴 Link local tạm thời
+        var resetLink = $"https://localhost:5173/reset-password?token={Uri.EscapeDataString(tokenValue)}";
+
+        var html = _emailTemplateService.Render("ResetPasswordTemplate.html", new()
+        {
+            ["DisplayName"] = user.DisplayName,
+            ["ResetLink"] = resetLink,
+            ["Year"] = DateTime.UtcNow.Year.ToString()
+        });
+
+        await _emailSender.SendEmailAsync(user.Email, "Reset password", html, cancellationToken);
+
+        return Result.Success();
+    }
+
+    public async Task<Result> ResetPasswordAsync(
+    ResetPasswordRequest request,
+    CancellationToken cancellationToken = default)
+    {
+        var rawToken = Uri.UnescapeDataString(request.Token);
+
+        var token = await _userTokenRepository.GetActiveTokenAsync(
+          rawToken,
+          UserTokenType.PasswordReset,
+          cancellationToken);
+
+        if (token is null)
+        {
+            return Result.Failure("Token không hợp lệ hoặc đã hết hạn.");
+        }
+
+        var user = await _userRepository.GetByIdAsync(token.UserId, cancellationToken);
+        if (user is null)
+        {
+            return Result.Failure("User không tồn tại.");
+        }
+
+        // Đổi mật khẩu
+        var newHash = _passwordHasher.HashPassword(request.NewPassword);
+        user.SetPasswordHash(newHash);
+
+        // Đánh dấu token đã dùng
+        token.MarkUsed();
+
+        _userRepository.Update(user);
+        _userTokenRepository.Update(token);
+
+        // (optional) revoke tất cả refresh token cũ của user
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        return Result.Success();
+    }
+
 }

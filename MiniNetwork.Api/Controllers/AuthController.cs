@@ -83,16 +83,30 @@ public class AuthController : ControllerBase
 
         return Ok(result.Data);
     }
-    [HttpGet("debug")]
+    [HttpPost("forgot-password")]
     [AllowAnonymous]
-    public IActionResult DebugToken()
+    public async Task<IActionResult> ForgotPassword(
+    ForgotPasswordRequest request,
+    CancellationToken ct)
     {
-        return Ok(new
-        {
-            IsAuthenticated = User.Identity?.IsAuthenticated ?? false,
-            Claims = User.Claims.Select(c => new { c.Type, c.Value }).ToList()
-        });
+        var result = await _authService.ForgotPasswordAsync(request, ct);
+        // luôn trả 200 để tránh lộ email có tồn tại hay không
+        return Ok();
     }
+
+    [HttpPost("reset-password")]
+    [AllowAnonymous]
+    public async Task<IActionResult> ResetPassword(
+        ResetPasswordRequest request,
+        CancellationToken ct)
+    {
+        var result = await _authService.ResetPasswordAsync(request, ct);
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return NoContent();
+    }
+
     private Guid GetUserIdFromClaims()
     {
         // thử theo kiểu chuẩn trước

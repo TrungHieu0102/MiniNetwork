@@ -1,6 +1,5 @@
 ﻿using MiniNetwork.Domain.Common;
 using MiniNetwork.Domain.Enums;
-using System.Xml.Linq;
 
 namespace MiniNetwork.Domain.Entities;
 
@@ -88,4 +87,5 @@ public class User : SoftDeletableEntity
         Status = status;
         MarkUpdated(Id);
     }
+  
 }

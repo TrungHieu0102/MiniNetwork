@@ -15,6 +15,7 @@ public class MiniNetworkDbContext : DbContext
     public DbSet<Role> Roles => Set<Role>();
     public DbSet<UserRole> UserRoles => Set<UserRole>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+    public DbSet<UserToken> UserTokens => Set<UserToken>();
 
     public DbSet<Post> Posts => Set<Post>();
     public DbSet<Comment> Comments => Set<Comment>();
@@ -82,16 +83,16 @@ public class MiniNetworkDbContext : DbContext
             .IsUnique();
 
         modelBuilder.Entity<PostLike>()
-       .HasOne(pl => pl.User)
-       .WithMany(u => u.Likes)
-       .HasForeignKey(pl => pl.UserId)
-       .OnDelete(DeleteBehavior.NoAction);
+           .HasOne(pl => pl.User)
+           .WithMany(u => u.Likes)
+           .HasForeignKey(pl => pl.UserId)
+           .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<PostLike>()
-       .HasOne(pl => pl.Post)
-       .WithMany(p => p.Likes)
-       .HasForeignKey(pl => pl.PostId)
-       .OnDelete(DeleteBehavior.Cascade);
+           .HasOne(pl => pl.Post)
+           .WithMany(p => p.Likes)
+           .HasForeignKey(pl => pl.PostId)
+           .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<PostLike>()
             .HasIndex(pl => new { pl.PostId, pl.UserId })
@@ -100,6 +101,16 @@ public class MiniNetworkDbContext : DbContext
         modelBuilder.Entity<Follow>()
             .HasIndex(f => new { f.FollowerId, f.FolloweeId })
             .IsUnique();
+        modelBuilder.Entity<UserToken>()
+            .HasIndex(ut => ut.Token)
+            .IsUnique();
+
+        modelBuilder.Entity<UserToken>()
+            .HasOne(ut => ut.User)
+            .WithMany() // nếu muốn User.UserTokens thì thêm collection bên User
+            .HasForeignKey(ut => ut.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
     }
 
 }

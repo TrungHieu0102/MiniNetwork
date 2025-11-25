@@ -7,7 +7,7 @@ using MiniNetwork.Infrastructure.Auth;
 using MiniNetwork.Infrastructure.Persistence;
 using MiniNetwork.Infrastructure.Repositories;
 using MiniNetwork.Infrastructure.Uow;
-
+using MiniNetwork.Infrastructure.Email;
 namespace MiniNetwork.Infrastructure;
 
 public static class DependencyInjection
@@ -38,7 +38,13 @@ public static class DependencyInjection
         // Services
         services.AddScoped<IPasswordHasher, PasswordHasherService>();
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+        services.AddScoped<IUserTokenRepository, UserTokenRepository>();
+        // Bind Brevo options
+        services.Configure<BrevoOptions>(configuration.GetSection("Brevo"));
+        services.AddSingleton<IEmailTemplateService, EmailTemplateService>();
 
+        // Email sender
+        services.AddScoped<IEmailSender, BrevoEmailSender>();
         return services;
     }
 }
