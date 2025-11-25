@@ -83,7 +83,16 @@ public class AuthController : ControllerBase
 
         return Ok(result.Data);
     }
-
+    [HttpGet("debug")]
+    [AllowAnonymous]
+    public IActionResult DebugToken()
+    {
+        return Ok(new
+        {
+            IsAuthenticated = User.Identity?.IsAuthenticated ?? false,
+            Claims = User.Claims.Select(c => new { c.Type, c.Value }).ToList()
+        });
+    }
     private Guid GetUserIdFromClaims()
     {
         // thử theo kiểu chuẩn trước

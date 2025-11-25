@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
 using MiniNetwork.Application;
 using MiniNetwork.Infrastructure;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,15 +19,19 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
-    // JWT cho swagger
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Description = "Nhập 'Bearer {token}'",
+        Description = "Enter your token",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
         Scheme = "bearer",
-        BearerFormat = "JWT"
+        BearerFormat = "JWT",
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "Bearer"
+        }
     };
 
     c.AddSecurityDefinition("Bearer", securityScheme);
@@ -36,7 +39,14 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            securityScheme,
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
             Array.Empty<string>()
         }
     });
@@ -59,14 +69,30 @@ builder.Services
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
 
-            // TẠM THỜI TẮT 2 CÁI NÀY
+            // Tạm thời tắt issuer/audience để debug cho dễ
             ValidateIssuer = false,
             ValidateAudience = false,
 
             ValidateLifetime = true,
             ClockSkew = TimeSpan.Zero
         };
+
+        // Log lỗi JWT ra console cho dễ soi
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                Console.WriteLine("JWT Authentication failed: " + context.Exception.Message);
+                return Task.CompletedTask;
+            },
+            OnChallenge = context =>
+            {
+                Console.WriteLine("JWT Challenge: " + context.ErrorDescription);
+                return Task.CompletedTask;
+            }
+        };
     });
+
 // Authorization
 builder.Services.AddAuthorization(options =>
 {
