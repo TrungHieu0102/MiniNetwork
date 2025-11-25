@@ -36,5 +36,31 @@ public class UserRepository : EfRepository<User>, IUserRepository
     {
         return _dbSet.AnyAsync(u => u.NormalizedEmail == normalizedEmail, cancellationToken);
     }
+    public async Task<List<User>> SearchAsync(
+       string? query,
+       int take,
+       CancellationToken ct = default)
+    {
+        var users = _dbSet
+            .Where(u => !u.IsDeleted)
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(query))
+        {
+            var q = query.Trim();
+
+            var qUpper = q.ToUpperInvariant();
+
+            users = users.Where(u =>
+                u.DisplayName.Contains(q) ||
+                u.NormalizedUserName.Contains(qUpper) ||
+                u.NormalizedEmail.Contains(qUpper));
+        }
+
+        return await users
+            .OrderBy(u => u.DisplayName)
+            .Take(take)
+            .ToListAsync(ct);
+    }
 
 }

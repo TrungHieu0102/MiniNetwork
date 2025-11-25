@@ -10,5 +10,8 @@ public interface IUserRepository : IRepository<User>
 
     Task<bool> UserNameExistsAsync(string normalizedUserName, CancellationToken cancellationToken = default);
     Task<bool> EmailExistsAsync(string normalizedEmail, CancellationToken cancellationToken = default);
-    
+    Task<List<User>> SearchAsync(
+       string? query,
+       int take,
+       CancellationToken ct = default);
 }
