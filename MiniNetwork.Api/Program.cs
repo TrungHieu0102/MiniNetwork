@@ -74,7 +74,7 @@ builder.Services
             ValidateAudience = false,
 
             ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero
+            ClockSkew = default
         };
 
         // Log lỗi JWT ra console cho dễ soi

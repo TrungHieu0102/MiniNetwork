@@ -1,9 +1,13 @@
-﻿using MiniNetwork.Application.Auth.DTOs;
+﻿using Google.Apis.Auth;
+using Microsoft.Extensions.Options;
+using MiniNetwork.Application.Auth.DTOs;
+using MiniNetwork.Application.Auth.Options;
 using MiniNetwork.Application.Common;
 using MiniNetwork.Application.Interfaces.Repositories;
 using MiniNetwork.Application.Interfaces.Services;
 using MiniNetwork.Domain.Entities;
 using MiniNetwork.Domain.Enums;
+
 
 namespace MiniNetwork.Application.Auth;
 
@@ -18,6 +22,7 @@ public class AuthService : IAuthService
     private readonly IUserTokenRepository _userTokenRepository;
     private readonly IEmailSender _emailSender;
     private readonly IEmailTemplateService _emailTemplateService;
+    private readonly GoogleAuthOptions _googleOptions;
 
 
 
@@ -30,7 +35,8 @@ public class AuthService : IAuthService
         IJwtTokenGenerator jwtTokenGenerator,
          IUserTokenRepository userTokenRepository,
          IEmailSender emailSender,
-         IEmailTemplateService emailTemplateService)
+         IEmailTemplateService emailTemplateService,
+         IOptions<GoogleAuthOptions> googleOptions)
     {
         _userRepository = userRepository;
         _roleRepository = roleRepository;
@@ -41,6 +47,8 @@ public class AuthService : IAuthService
         _userTokenRepository = userTokenRepository;
         _emailSender = emailSender;
         _emailTemplateService = emailTemplateService;
+        _googleOptions = googleOptions.Value;
+
     }
 
     // ========== REGISTER ==========
@@ -386,5 +394,129 @@ public class AuthService : IAuthService
 
         return Result.Success();
     }
+    public async Task<Result<AuthResponse>> LoginWithGoogleAsync(
+       GoogleLoginRequest request,
+       string? ipAddress,
+       CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(request.IdToken))
+            return Result<AuthResponse>.Failure("Thiếu Google id_token.");
 
+        // 1. Verify id_token với Google
+        GoogleJsonWebSignature.Payload payload;
+        try
+        {
+            var settings = new GoogleJsonWebSignature.ValidationSettings
+            {
+                Audience = new[] { _googleOptions.ClientId }
+            };
+
+            payload = await GoogleJsonWebSignature.ValidateAsync(request.IdToken, settings);
+        }
+        catch
+        {
+            return Result<AuthResponse>.Failure("Token Google không hợp lệ.");
+        }
+
+        var email = payload.Email;
+        if (string.IsNullOrWhiteSpace(email))
+            return Result<AuthResponse>.Failure("Không lấy được email từ Google.");
+
+        var normalizedEmail = email.Trim().ToUpperInvariant();
+
+        // 2. Tìm user theo email
+        var user = await _userRepository.GetByEmailAsync(normalizedEmail, cancellationToken);
+
+        // 3. Nếu chưa có user → tạo mới
+        if (user is null)
+        {
+            var baseUserName = email.Split('@')[0];
+            var userName = baseUserName;
+
+            // Tránh trùng username
+            var normalizedUserName = userName.ToUpperInvariant();
+            var existing = await _userRepository.GetByUserNameAsync(normalizedUserName, cancellationToken);
+            if (existing is not null)
+            {
+                userName = $"{baseUserName}_{Guid.NewGuid().ToString("N")[..6]}";
+            }
+
+            // Vì User constructor yêu cầu passwordHash,
+            // ta generate một mật khẩu ngẫu nhiên (user Google sẽ không dùng trực tiếp cái này).
+            var randomPassword = Guid.NewGuid().ToString("N");
+            var passwordHash = _passwordHasher.HashPassword(randomPassword);
+
+            var displayName = payload.Name ?? userName;
+
+            user = new User(
+                userName: userName,
+                email: email,
+                passwordHash: passwordHash,
+                displayName: displayName);
+
+            // Email do Google kiểm chứng → confirm luôn
+            user.ConfirmEmail();
+
+            // Nếu có avatar từ Google → update profile
+            if (!string.IsNullOrWhiteSpace(payload.Picture))
+            {
+                user.UpdateProfile(displayName, user.Bio, payload.Picture);
+            }
+
+            await _userRepository.AddAsync(user, cancellationToken);
+
+            var role = await _roleRepository.GetByNameAsync("User", cancellationToken);
+           
+
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+        }
+        else
+        {
+            // Optional: nếu user chưa confirm email thì confirm luôn
+            if (!user.EmailConfirmed)
+            {
+                user.ConfirmEmail();
+            }
+
+            // Optional: nếu chưa có avatar mà Google có picture, set lần đầu
+            if (string.IsNullOrEmpty(user.AvatarUrl) && !string.IsNullOrWhiteSpace(payload.Picture))
+            {
+                user.UpdateProfile(user.DisplayName, user.Bio, payload.Picture);
+            }
+
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+        }
+
+        // 4. Tạo JWT + Refresh token giống login thường
+        var roles = user.UserRoles.Select(ur => ur.Role.Name).ToList();
+
+        var accessToken = _jwtTokenGenerator.GenerateAccessToken(user, roles);
+        var refreshToken = _jwtTokenGenerator.GenerateRefreshToken(user);
+
+        var refreshTokenEntity = new RefreshToken(
+            userId: user.Id,
+            token: refreshToken.token,
+            expiresAt: refreshToken.expiresAt,
+            createdByIp: ipAddress);
+
+        await _refreshTokenRepository.AddAsync(refreshTokenEntity, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        var response = new AuthResponse
+        {
+            UserId = user.Id,
+            UserName = user.UserName,
+            DisplayName = user.DisplayName,
+            Email = user.Email,
+            Roles = [.. roles],
+            AccessToken = accessToken.token,
+            AccessTokenExpiresAt = accessToken.expiresAt,
+            RefreshToken = refreshToken.token,
+            RefreshTokenExpiresAt = refreshToken.expiresAt
+        };
+
+        return Result<AuthResponse>.Success(response);
+    }
 }
+
+

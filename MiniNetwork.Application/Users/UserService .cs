@@ -74,5 +74,22 @@ public class UserService : IUserService
 
         return Result<List<UserSummaryDto>>.Success(dto);
     }
+    public async Task<Result<string>> UpdateAvatarAsync(
+    Guid userId,
+    string avatarUrl,
+    CancellationToken ct)
+    {
+        var user = await _userRepository.GetByIdAsync(userId, ct);
+        if (user is null || user.IsDeleted)
+            return Result<string>.Failure("User không tồn tại.");
+
+        user.UpdateProfile(user.DisplayName, user.Bio, avatarUrl);
+
+        _userRepository.Update(user);
+        await _unitOfWork.SaveChangesAsync(ct);
+
+        return Result<string>.Success(avatarUrl);
+    }
+
 
 }

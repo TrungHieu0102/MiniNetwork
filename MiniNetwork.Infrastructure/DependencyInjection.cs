@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MiniNetwork.Application.Auth.Options;
 using MiniNetwork.Application.Interfaces.Repositories;
 using MiniNetwork.Application.Interfaces.Services;
 using MiniNetwork.Infrastructure.Auth;
+using MiniNetwork.Infrastructure.Email;
 using MiniNetwork.Infrastructure.Persistence;
 using MiniNetwork.Infrastructure.Repositories;
+using MiniNetwork.Infrastructure.Storage;
 using MiniNetwork.Infrastructure.Uow;
-using MiniNetwork.Infrastructure.Email;
 namespace MiniNetwork.Infrastructure;
 
 public static class DependencyInjection
@@ -45,6 +47,15 @@ public static class DependencyInjection
 
         // Email sender
         services.AddScoped<IEmailSender, BrevoEmailSender>();
+        // AwsS3 options
+        services.Configure<AwsS3Options>(configuration.GetSection("AwsS3"));
+
+        // File storage
+        services.AddScoped<IFileStorageService, S3FileStorageService>();
+        //Google Login
+        services.Configure<GoogleAuthOptions>(configuration.GetSection("GoogleAuth"));
         return services;
+        
+
     }
 }

@@ -1,9 +1,11 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MiniNetwork.Api.Contracts.Users;
+using MiniNetwork.Application.Interfaces.Services;
 using MiniNetwork.Application.Users;
 using MiniNetwork.Application.Users.DTOs;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace MiniNetwork.Api.Controllers;
 
@@ -12,10 +14,14 @@ namespace MiniNetwork.Api.Controllers;
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly IFileStorageService _fileStorage;
 
-    public UsersController(IUserService userService)
+
+    public UsersController(IUserService userService, IFileStorageService fileStorage)
     {
         _userService = userService;
+        _fileStorage = fileStorage;
+
     }
 
     // GET api/users/me
@@ -36,8 +42,9 @@ public class UsersController : ControllerBase
     // PUT api/users/me
     [HttpPut("me")]
     [Authorize]
+    [Consumes("multipart/form-data")]
     public async Task<IActionResult> UpdateMe(
-        [FromBody] UpdateProfileRequest request,
+        [FromForm] UpdateProfileWithAvatarRequest request,
         CancellationToken ct)
     {
         var userId = GetUserIdFromClaims();
@@ -46,7 +53,28 @@ public class UsersController : ControllerBase
         if (!ModelState.IsValid)
             return ValidationProblem(ModelState);
 
-        var result = await _userService.UpdateProfileAsync(userId, request, ct);
+        string? avatarUrl = null;
+
+        if (request.Avatar is not null && request.Avatar.Length > 0)
+        {
+            var key = BuildAvatarKey(userId, request.Avatar.FileName);
+            using var stream = request.Avatar.OpenReadStream();
+
+            avatarUrl = await _fileStorage.UploadAsync(
+                stream,
+                key,
+                request.Avatar.ContentType ?? "image/png",
+                ct);
+        }
+
+        var appRequest = new UpdateProfileRequest
+        {
+            DisplayName = request.DisplayName,
+            Bio = request.Bio,
+            AvatarUrl = avatarUrl // nếu null, trong UserService có thể giữ avatar cũ tuỳ bạn
+        };
+
+        var result = await _userService.UpdateProfileAsync(userId, appRequest, ct);
         if (!result.Succeeded)
             return BadRequest(new { error = result.Error });
 
@@ -55,7 +83,7 @@ public class UsersController : ControllerBase
 
     // GET api/users/{id}
     [HttpGet("{id:guid}")]
-    [Authorize] 
+    [Authorize]
     public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
     {
         var result = await _userService.GetUserProfileAsync(id, ct);
@@ -63,6 +91,35 @@ public class UsersController : ControllerBase
             return NotFound(new { error = result.Error });
 
         return Ok(result.Data);
+    }
+    [HttpPost("me/avatar")]
+    [Authorize]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> UploadAvatar(
+        [FromForm] IFormFile avatar,
+        CancellationToken ct)
+    {
+        if (avatar is null || avatar.Length == 0)
+            return BadRequest(new { error = "File avatar không hợp lệ." });
+
+        var userId = GetUserIdFromClaims();
+        if (userId == Guid.Empty) return Unauthorized();
+
+        var key = BuildAvatarKey(userId, avatar.FileName);
+
+        using var stream = avatar.OpenReadStream();
+
+        var avatarUrl = await _fileStorage.UploadAsync(
+            stream,
+            key,
+            avatar.ContentType ?? "image/png",
+            ct);
+
+        var result = await _userService.UpdateAvatarAsync(userId, avatarUrl, ct);
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(new { avatarUrl });
     }
 
     // GET api/users?query=abc
@@ -72,6 +129,43 @@ public class UsersController : ControllerBase
     {
         var result = await _userService.SearchUsersAsync(query, ct);
         return Ok(result.Data);
+    }
+    [HttpDelete("me/avatar")]
+    [Authorize]
+    public async Task<IActionResult> DeleteAvatar(
+    [FromQuery] string url,
+    CancellationToken ct)
+    {
+        var userId = GetUserIdFromClaims();
+        if (userId == Guid.Empty) return Unauthorized();
+
+        if (string.IsNullOrWhiteSpace(url))
+            return BadRequest(new { error = "Thiếu url ảnh cần xoá." });
+
+        // Optional: kiểm tra url có thuộc user này không
+        if (!UrlBelongsToUserAvatar(url, userId))
+            return Forbid(); // tránh user này xoá ảnh của user khác
+
+        await _fileStorage.DeleteAsync(url, ct);
+
+       
+
+        return NoContent();
+    }
+
+    private bool UrlBelongsToUserAvatar(string url, Guid userId)
+    {
+        // Vì key upload đang dạng avatars/{userId}/xxx.ext
+        // nên URL sẽ chứa đoạn này
+        return url.Contains($"/avatars/{userId}/", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private string BuildAvatarKey(Guid userId, string originalFileName)
+    {
+        var ext = Path.GetExtension(originalFileName);
+        if (string.IsNullOrWhiteSpace(ext)) ext = ".png";
+
+        return $"avatars/{userId}/{Guid.NewGuid()}{ext}";
     }
 
     private Guid GetUserIdFromClaims()

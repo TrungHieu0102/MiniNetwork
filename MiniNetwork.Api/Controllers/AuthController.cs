@@ -117,4 +117,16 @@ public class AuthController : ControllerBase
 
         return Guid.TryParse(userIdStr, out var id) ? id : Guid.Empty;
     }
+    [HttpPost("google")]
+    [AllowAnonymous]
+    public async Task<IActionResult> LoginWithGoogle(GoogleLoginRequest request, CancellationToken ct)
+    {
+        var ip = HttpContext.Connection.RemoteIpAddress?.ToString();
+        var result = await _authService.LoginWithGoogleAsync(request, ip, ct);
+
+        if (!result.Succeeded)
+            return Unauthorized(new { error = result.Error });
+
+        return Ok(result.Data);
+    }
 }
