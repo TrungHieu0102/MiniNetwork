@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MiniNetwork.Application.Common;
+using MiniNetwork.Application.Follows;
 using MiniNetwork.Application.Interfaces.Repositories;
 using MiniNetwork.Application.Users.DTOs;
 using MiniNetwork.Domain.Entities;
@@ -11,34 +12,60 @@ public class UserService : IUserService
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
-
+    private readonly IFollowService _followService;
     public UserService(
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
-        IMapper mapper)
+        IMapper mapper, IFollowService followService)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _followService = followService;
     }
 
     public async Task<Result<UserProfileDto>> GetCurrentUserProfileAsync(
         Guid userId,
         CancellationToken ct)
     {
-        return await GetUserProfileAsync(userId, ct);
+        var user = await _userRepository.GetByIdAsync(userId, ct);
+        if (user is null || user.IsDeleted)
+            return Result<UserProfileDto>.Failure("User not found.");
+
+        var dto = _mapper.Map<UserProfileDto>(user);
+        var followersCount = await _followService.GetFollowersCountAsync(userId, ct);
+        var followingCount = await _followService.GetFollowingCountAsync(userId, ct);
+        dto.FollowersCount = followersCount.Data;
+        dto.FollowingCount = followingCount.Data;
+        return Result<UserProfileDto>.Success(dto);
     }
 
     public async Task<Result<UserProfileDto>> GetUserProfileAsync(
-        Guid userId,
+         Guid profileUserId,
+    Guid currentUserId,
         CancellationToken ct)
     {
-        var user = await _userRepository.GetByIdAsync(userId, ct);
+        var user = await _userRepository.GetByIdAsync(profileUserId, ct);
 
         if (user is null || user.IsDeleted)
-            return Result<UserProfileDto>.Failure("User không tồn tại.");
+            return Result<UserProfileDto>.Failure("User not found.");
 
         var dto = _mapper.Map<UserProfileDto>(user);
+        if (currentUserId != Guid.Empty && currentUserId != profileUserId)
+        {
+            var followResult = await _followService.IsFollowingAsync(currentUserId, profileUserId, ct);
+            dto.IsFollowing = followResult.Data;
+        }
+        else
+        {
+            dto.IsFollowing = false;
+        }
+        var followersCount = await _followService.GetFollowersCountAsync(profileUserId, ct);
+        var followingCount = await _followService.GetFollowingCountAsync(profileUserId, ct);
+
+        dto.FollowersCount = followersCount.Data;
+        dto.FollowingCount = followingCount.Data;
+
         return Result<UserProfileDto>.Success(dto);
     }
 

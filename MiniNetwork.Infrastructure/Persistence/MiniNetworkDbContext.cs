@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiniNetwork.Domain.Entities;
+using System;
 
 namespace MiniNetwork.Infrastructure.Persistence;
 
@@ -110,6 +111,8 @@ public class MiniNetworkDbContext : DbContext
             .WithMany() // nếu muốn User.UserTokens thì thêm collection bên User
             .HasForeignKey(ut => ut.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MiniNetworkDbContext).Assembly);
+
 
     }
 

@@ -70,7 +70,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.Follow", b =>
@@ -104,7 +104,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
                     b.HasIndex("FollowerId", "FolloweeId")
                         .IsUnique();
 
-                    b.ToTable("Follows");
+                    b.ToTable("Follows", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.Post", b =>
@@ -151,7 +151,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Posts", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.PostLike", b =>
@@ -185,7 +185,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
                     b.HasIndex("PostId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("PostLikes");
+                    b.ToTable("PostLikes", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.RefreshToken", b =>
@@ -223,7 +223,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RefreshTokens");
+                    b.ToTable("RefreshTokens", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.Role", b =>
@@ -269,7 +269,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
                     b.HasIndex("NormalizedName")
                         .IsUnique();
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.User", b =>
@@ -349,7 +349,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.UserRole", b =>
@@ -367,7 +367,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("UserRoles");
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.UserToken", b =>
@@ -402,7 +402,7 @@ namespace MiniNetwork.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserTokens");
+                    b.ToTable("UserTokens", (string)null);
                 });
 
             modelBuilder.Entity("MiniNetwork.Domain.Entities.Comment", b =>

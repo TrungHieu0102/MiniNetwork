@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using MiniNetwork.Application.Auth;
 using MiniNetwork.Application.Common.Mapping;
+using MiniNetwork.Application.Follows;
 using MiniNetwork.Application.Users;
 namespace MiniNetwork.Application;
 
@@ -14,6 +15,8 @@ public static class DependencyInjection
         services.AddScoped<IAuthService, AuthService>();
         // User
         services.AddScoped<IUserService, UserService>();
+        //Follow
+        services.AddScoped<IFollowService, FollowService>();
         // AutoMapper
         var mapperConfig = new MapperConfiguration(cfg =>
         {

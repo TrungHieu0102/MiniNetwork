@@ -11,6 +11,10 @@
     <ProjectReference Include="..\MiniNetwork.Domain\MiniNetwork.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Follows\DTOs\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

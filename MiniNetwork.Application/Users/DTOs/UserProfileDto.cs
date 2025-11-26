@@ -9,4 +9,8 @@ public class UserProfileDto
     public string? Bio { get; set; }
     public string? AvatarUrl { get; set; }
     public string Status { get; set; } = null!; // map từ enum Status.ToString()
+    //Follow info
+    public bool IsFollowing { get; set; }
+    public int FollowersCount { get; set; }
+    public int FollowingCount { get; set; }
 }

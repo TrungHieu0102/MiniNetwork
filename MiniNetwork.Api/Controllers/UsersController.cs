@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MiniNetwork.Api.Contracts.Users;
+using MiniNetwork.Application.Follows;
 using MiniNetwork.Application.Interfaces.Services;
 using MiniNetwork.Application.Users;
 using MiniNetwork.Application.Users.DTOs;
@@ -15,13 +16,13 @@ public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
     private readonly IFileStorageService _fileStorage;
+    private readonly IFollowService _followService;
 
-
-    public UsersController(IUserService userService, IFileStorageService fileStorage)
+    public UsersController(IUserService userService, IFileStorageService fileStorage, IFollowService followService)
     {
         _userService = userService;
         _fileStorage = fileStorage;
-
+        _followService = followService;
     }
 
     // GET api/users/me
@@ -84,9 +85,11 @@ public class UsersController : ControllerBase
     // GET api/users/{id}
     [HttpGet("{id:guid}")]
     [Authorize]
-    public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
+    public async Task<IActionResult> GetById(Guid profileUserId, CancellationToken ct)
     {
-        var result = await _userService.GetUserProfileAsync(id, ct);
+        var user = GetUserIdFromClaims();
+        if(user == Guid.Empty) return Unauthorized();
+        var result = await _userService.GetUserProfileAsync(profileUserId,user, ct);
         if (!result.Succeeded || result.Data is null)
             return NotFound(new { error = result.Error });
 
@@ -148,19 +151,40 @@ public class UsersController : ControllerBase
 
         await _fileStorage.DeleteAsync(url, ct);
 
-       
+
 
         return NoContent();
     }
-
-    private bool UrlBelongsToUserAvatar(string url, Guid userId)
+    [HttpPost("{targetId:guid}/follow")]
+    [Authorize]
+    public async Task<IActionResult> Follow(Guid targetId, CancellationToken ct)
+    {
+        var userId = GetUserIdFromClaims();
+        if (userId == Guid.Empty) return Unauthorized();
+        var result = await _followService.FollowAsync(userId, targetId, ct);
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+        return NoContent();
+    }
+    [HttpDelete("{targetId:guid}/follow")]
+    [Authorize]
+    public async Task<IActionResult> Unfollow(Guid targetId, CancellationToken ct)
+    {
+        var userId = GetUserIdFromClaims();
+        if (userId == Guid.Empty) return Unauthorized();
+        var result = await _followService.UnfollowAsync(userId, targetId, ct);
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+        return NoContent();
+    }
+    private static bool UrlBelongsToUserAvatar(string url, Guid userId)
     {
         // Vì key upload đang dạng avatars/{userId}/xxx.ext
         // nên URL sẽ chứa đoạn này
         return url.Contains($"/avatars/{userId}/", StringComparison.OrdinalIgnoreCase);
     }
 
-    private string BuildAvatarKey(Guid userId, string originalFileName)
+    private static string BuildAvatarKey(Guid userId, string originalFileName)
     {
         var ext = Path.GetExtension(originalFileName);
         if (string.IsNullOrWhiteSpace(ext)) ext = ".png";
