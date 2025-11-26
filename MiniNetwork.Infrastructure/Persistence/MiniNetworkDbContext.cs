@@ -108,11 +108,17 @@ public class MiniNetworkDbContext : DbContext
 
         modelBuilder.Entity<UserToken>()
             .HasOne(ut => ut.User)
-            .WithMany() // nếu muốn User.UserTokens thì thêm collection bên User
+            .WithMany() 
             .HasForeignKey(ut => ut.UserId)
             .OnDelete(DeleteBehavior.Cascade);
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MiniNetworkDbContext).Assembly);
 
+
+        modelBuilder.Entity<Follow>()
+            .HasIndex(f => new { f.FolloweeId, f.CreatedAt });
+
+        modelBuilder.Entity<Follow>()
+            .HasIndex(f => new { f.FollowerId, f.CreatedAt });
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MiniNetworkDbContext).Assembly);
 
     }
 

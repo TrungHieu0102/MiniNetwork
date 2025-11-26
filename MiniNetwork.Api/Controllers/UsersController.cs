@@ -88,8 +88,8 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> GetById(Guid profileUserId, CancellationToken ct)
     {
         var user = GetUserIdFromClaims();
-        if(user == Guid.Empty) return Unauthorized();
-        var result = await _userService.GetUserProfileAsync(profileUserId,user, ct);
+        if (user == Guid.Empty) return Unauthorized();
+        var result = await _userService.GetUserProfileAsync(profileUserId, user, ct);
         if (!result.Succeeded || result.Data is null)
             return NotFound(new { error = result.Error });
 
@@ -177,6 +177,61 @@ public class UsersController : ControllerBase
             return BadRequest(new { error = result.Error });
         return NoContent();
     }
+    [HttpGet("{id:guid}/followers")]
+    [Authorize]
+    public async Task<IActionResult> GetFollowers(
+    Guid id,
+    [FromQuery] int page = 1,
+    [FromQuery] int pageSize = 20,
+    [FromQuery] string? query = null,
+    CancellationToken ct = default)
+    {
+        var result = await _followService.GetFollowersAsync(id, query, page, pageSize, ct);
+
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(result.Data);
+    }
+    [HttpGet("{id:guid}/following")]
+    [Authorize]
+    public async Task<IActionResult> GetFollowing(
+    Guid id,
+    [FromQuery] int page = 1,
+    [FromQuery] int pageSize = 20,
+    [FromQuery] string? query = null,
+    CancellationToken ct = default)
+    {
+        var result = await _followService.GetFollowingAsync(id, query, page, pageSize, ct);
+
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(result.Data);
+    }
+    // GET api/users/{id:guid}/followers/count
+    [HttpGet("{id:guid}/followers/count")]
+    [Authorize]
+    public async Task<IActionResult> GetFollowersCount(Guid id, CancellationToken ct)
+    {
+        var result = await _followService.GetFollowersCountAsync(id, ct);
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(new { count = result.Data });
+    }
+
+    // GET api/users/{id:guid}/following/count
+    [HttpGet("{id:guid}/following/count")]
+    [Authorize]
+    public async Task<IActionResult> GetFollowingCount(Guid id, CancellationToken ct)
+    {
+        var result = await _followService.GetFollowingCountAsync(id, ct);
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(new { count = result.Data });
+    }
     private static bool UrlBelongsToUserAvatar(string url, Guid userId)
     {
         // Vì key upload đang dạng avatars/{userId}/xxx.ext
@@ -201,4 +256,22 @@ public class UsersController : ControllerBase
 
         return Guid.TryParse(userIdStr, out var id) ? id : Guid.Empty;
     }
+    [HttpGet("me/suggestions")]
+    [Authorize]
+    public async Task<IActionResult> GetFollowSuggestions(
+        [FromQuery] int limit = 10,
+        CancellationToken ct = default)
+    {
+        var currentUserId = GetUserIdFromClaims();
+        if (currentUserId == Guid.Empty)
+            return Unauthorized();
+
+        var result = await _followService.SuggestFollowsAsync(currentUserId, limit, ct);
+
+        if (!result.Succeeded || result.Data is null)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(result.Data); 
+    }
+
 }

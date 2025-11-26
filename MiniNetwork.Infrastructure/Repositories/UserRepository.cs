@@ -62,5 +62,16 @@ public class UserRepository : EfRepository<User>, IUserRepository
             .Take(take)
             .ToListAsync(ct);
     }
+    public async Task<IReadOnlyList<User>> GetByIdsAsync(
+            IReadOnlyList<Guid> ids,
+            CancellationToken ct = default)
+            {
+                if (ids == null || ids.Count == 0)
+                    return Array.Empty<User>();
+
+                return await _dbSet
+                    .Where(u => ids.Contains(u.Id))
+                    .ToListAsync(ct);
+            }
 
 }

@@ -1,14 +1,18 @@
-﻿using MiniNetwork.Application.Common;
+﻿using AutoMapper;
+using MiniNetwork.Application.Common;
 using MiniNetwork.Application.Interfaces.Repositories;
+using MiniNetwork.Application.Users.DTOs;
 using MiniNetwork.Domain.Entities;
+using MiniNetwork.Domain.Enums;
 
 namespace MiniNetwork.Application.Follows
 {
-    public class FollowService(IFollowRepository followRepository, IUserRepository userRepository, IUnitOfWork unitOfWork) : IFollowService
+    public class FollowService(IFollowRepository followRepository, IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper) : IFollowService
     {
         private readonly IFollowRepository _followRepository = followRepository;
         private readonly IUserRepository _userRepository = userRepository;
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
+        private readonly IMapper _mapper = mapper;
 
         public async Task<Result> FollowAsync(Guid currentUserId, Guid targetUserId, CancellationToken ct)
         {
@@ -84,6 +88,113 @@ namespace MiniNetwork.Application.Follows
             }
             var count = await _followRepository.GetFollowingCountAsync(userId, ct);
             return Result<int>.Success(count);
+        }
+
+        public async Task<Result<PagedResult<UserSummaryDto>>> GetFollowersAsync(
+                Guid userId,
+                string? query,
+                int page,
+                int pageSize,
+                CancellationToken ct)
+        {
+            if (userId == Guid.Empty)
+                return Result<PagedResult<UserSummaryDto>>.Failure("UserId không hợp lệ.");
+
+            if (page <= 0) page = 1;
+            if (pageSize <= 0 || pageSize > 100) pageSize = 20;
+
+            var skip = (page - 1) * pageSize;
+
+            var totalCount = await _followRepository.GetFollowersCountAsync(userId, ct);
+            var users = await _followRepository.GetFollowersAsync(userId, query, skip, pageSize, ct);
+
+            var dto = _mapper.Map<List<UserSummaryDto>>(users);
+            var paged = PagedResult<UserSummaryDto>.Create(dto, page, pageSize, totalCount);
+
+            return Result<PagedResult<UserSummaryDto>>.Success(paged);
+        }
+
+        public async Task<Result<PagedResult<UserSummaryDto>>> GetFollowingAsync(
+                 Guid userId,
+                 string? query,
+                 int page,
+                 int pageSize,
+                 CancellationToken ct)
+        {
+            if (userId == Guid.Empty)
+                return Result<PagedResult<UserSummaryDto>>.Failure("UserId không hợp lệ.");
+
+            if (page <= 0) page = 1;
+            if (pageSize <= 0 || pageSize > 100) pageSize = 20;
+
+            var skip = (page - 1) * pageSize;
+
+            var totalCount = await _followRepository.GetFollowingCountAsync(userId, ct);
+            var users = await _followRepository.GetFollowingAsync(userId, query, skip, pageSize, ct);
+
+            var dto = _mapper.Map<List<UserSummaryDto>>(users);
+            var paged = PagedResult<UserSummaryDto>.Create(dto, page, pageSize, totalCount);
+
+            return Result<PagedResult<UserSummaryDto>>.Success(paged);
+        }
+
+        public async Task<Result<List<UserSummaryDto>>> SuggestFollowsAsync(Guid currentUserId, int limit, CancellationToken ct)
+        {
+            if (currentUserId == Guid.Empty)
+            {
+                return Result<List<UserSummaryDto>>.Failure("Invalid user ID.");
+            }
+            if (limit <= 0 || limit > 50)
+            {
+                limit = 10;
+            }
+            var followingIds = await _followRepository.GetFollowingIdsAsync(currentUserId, ct);
+            var alreadyFollowing = new HashSet<Guid>(followingIds);
+            alreadyFollowing.Add(currentUserId);
+            if (followingIds.Count == 0)
+            {
+                // Nếu chưa follow ai, có thể gợi ý theo tiêu chí khác (top user, mới tạo, v.v.)
+                // Ở đây trả list rỗng cho đơn giản
+                // Sau này implement thêm logic gợi ý
+                return Result<List<UserSummaryDto>>.Success(new List<UserSummaryDto>());
+            }
+            var friendsOfFriendsEdges = await _followRepository.GetFollowingsByFollowerIdsAsync(followingIds, ct);
+            var scores = new Dictionary<Guid, int>();
+            foreach (var edge in friendsOfFriendsEdges)
+            {
+                var candidateId = edge.FolloweeId;
+
+                // Bỏ qua mình + những người mình đã follow
+                if (alreadyFollowing.Contains(candidateId))
+                    continue;
+
+                if (scores.ContainsKey(candidateId))
+                    scores[candidateId]++;
+                else
+                    scores[candidateId] = 1;
+            }
+            if (scores.Count == 0)
+            {
+                return Result<List<UserSummaryDto>>.Success(new List<UserSummaryDto>());
+            }
+            //Take top candidates
+            var topCandidateIds = scores
+                   .OrderByDescending(kv => kv.Value)
+                   .ThenBy(kv => kv.Key)
+                   .Take(limit)
+                   .Select(kv => kv.Key)
+                   .ToList();
+            var users = await _userRepository.GetByIdsAsync(topCandidateIds, ct);
+            var userDict = users.ToDictionary(u => u.Id);
+            var orderedUsers = topCandidateIds
+                    .Where(id => userDict.ContainsKey(id))
+                    .Select(id => userDict[id])
+                    .ToList();
+            orderedUsers = [.. orderedUsers.Where(u => !u.IsDeleted && u.Status == UserStatus.Active)];
+
+            var dto = _mapper.Map<List<UserSummaryDto>>(orderedUsers);
+
+            return Result<List<UserSummaryDto>>.Success(dto);
         }
     }
 }

@@ -14,4 +14,7 @@ public interface IUserRepository : IRepository<User>
        string? query,
        int take,
        CancellationToken ct = default);
+    Task<IReadOnlyList<User>> GetByIdsAsync(
+        IReadOnlyList<Guid> ids,
+        CancellationToken ct = default);
 }
