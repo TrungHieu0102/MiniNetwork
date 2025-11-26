@@ -54,6 +54,8 @@ public static class DependencyInjection
         services.AddScoped<IFileStorageService, S3FileStorageService>();
         //Google Login
         services.Configure<GoogleAuthOptions>(configuration.GetSection("GoogleAuth"));
+        services.AddScoped<IBlockRepository, BlockRepository>();
+
         return services;
         
 

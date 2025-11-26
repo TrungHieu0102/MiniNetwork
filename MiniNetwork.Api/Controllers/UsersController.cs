@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MiniNetwork.Api.Contracts.Users;
+using MiniNetwork.Application.Blocks;
 using MiniNetwork.Application.Follows;
 using MiniNetwork.Application.Interfaces.Services;
 using MiniNetwork.Application.Users;
@@ -17,12 +18,14 @@ public class UsersController : ControllerBase
     private readonly IUserService _userService;
     private readonly IFileStorageService _fileStorage;
     private readonly IFollowService _followService;
+    private readonly IBlockService _blockService;
 
-    public UsersController(IUserService userService, IFileStorageService fileStorage, IFollowService followService)
+    public UsersController(IUserService userService, IFileStorageService fileStorage, IFollowService followService, IBlockService blockService)
     {
         _userService = userService;
         _fileStorage = fileStorage;
         _followService = followService;
+        _blockService = blockService;
     }
 
     // GET api/users/me
@@ -130,7 +133,9 @@ public class UsersController : ControllerBase
     [Authorize]
     public async Task<IActionResult> Search([FromQuery] string? query, CancellationToken ct)
     {
-        var result = await _userService.SearchUsersAsync(query, ct);
+        var userId = GetUserIdFromClaims();
+        if (userId == Guid.Empty) return Unauthorized();
+        var result = await _userService.SearchUsersAsync(userId, query, ct);
         return Ok(result.Data);
     }
     [HttpDelete("me/avatar")]
@@ -177,38 +182,59 @@ public class UsersController : ControllerBase
             return BadRequest(new { error = result.Error });
         return NoContent();
     }
+    // GET api/users/{id:guid}/followers
     [HttpGet("{id:guid}/followers")]
     [Authorize]
     public async Task<IActionResult> GetFollowers(
-    Guid id,
-    [FromQuery] int page = 1,
-    [FromQuery] int pageSize = 20,
-    [FromQuery] string? query = null,
-    CancellationToken ct = default)
+        Guid id,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 20,
+        [FromQuery] string? query = null,
+        CancellationToken ct = default)
     {
-        var result = await _followService.GetFollowersAsync(id, query, page, pageSize, ct);
+        var currentUserId = GetUserIdFromClaims();
+        if (currentUserId == Guid.Empty) return Unauthorized();
 
-        if (!result.Succeeded)
+        var result = await _followService.GetFollowersAsync(
+            profileUserId: id,
+            viewerUserId: currentUserId,
+            query: query,
+            page: page,
+            pageSize: pageSize,
+            ct: ct);
+
+        if (!result.Succeeded || result.Data is null)
             return BadRequest(new { error = result.Error });
 
         return Ok(result.Data);
     }
+    // GET api/users/{id:guid}/following
     [HttpGet("{id:guid}/following")]
     [Authorize]
     public async Task<IActionResult> GetFollowing(
-    Guid id,
-    [FromQuery] int page = 1,
-    [FromQuery] int pageSize = 20,
-    [FromQuery] string? query = null,
-    CancellationToken ct = default)
+        Guid id,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 20,
+        [FromQuery] string? query = null,
+        CancellationToken ct = default)
     {
-        var result = await _followService.GetFollowingAsync(id, query, page, pageSize, ct);
+        var currentUserId = GetUserIdFromClaims();
+        if (currentUserId == Guid.Empty) return Unauthorized();
 
-        if (!result.Succeeded)
+        var result = await _followService.GetFollowingAsync(
+            profileUserId: id,
+            viewerUserId: currentUserId,
+            query: query,
+            page: page,
+            pageSize: pageSize,
+            ct: ct);
+
+        if (!result.Succeeded || result.Data is null)
             return BadRequest(new { error = result.Error });
 
         return Ok(result.Data);
     }
+
     // GET api/users/{id:guid}/followers/count
     [HttpGet("{id:guid}/followers/count")]
     [Authorize]
@@ -271,7 +297,58 @@ public class UsersController : ControllerBase
         if (!result.Succeeded || result.Data is null)
             return BadRequest(new { error = result.Error });
 
-        return Ok(result.Data); 
+        return Ok(result.Data);
+    }
+    // GET api/users/me/suggestions
+    [HttpGet("me/suggestions-random")]
+    [Authorize]
+    public async Task<IActionResult> SuggestFollowsRandomWalk(
+        [FromQuery] int limit = 10,
+        CancellationToken ct = default)
+    {
+        var currentUserId = GetUserIdFromClaims();
+        if (currentUserId == Guid.Empty)
+            return Unauthorized();
+
+        var result = await _followService.SuggestFollowsRandomWalkAsync(currentUserId, limit, ct);
+
+        if (!result.Succeeded || result.Data is null)
+            return BadRequest(new { error = result.Error });
+
+        return Ok(result.Data);
+
+    }
+    // POST api/users/{id:guid}/block
+    [HttpPost("{id:guid}/block")]
+    [Authorize]
+    public async Task<IActionResult> BlockUser(Guid id, CancellationToken ct)
+    {
+        var currentUserId = GetUserIdFromClaims();
+        if (currentUserId == Guid.Empty)
+            return Unauthorized();
+
+        var result = await _blockService.BlockAsync(currentUserId, id, ct);
+
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return NoContent();
+    }
+    // DELETE api/users/{id:guid}/block
+    [HttpDelete("{id:guid}/block")]
+    [Authorize]
+    public async Task<IActionResult> UnblockUser(Guid id, CancellationToken ct)
+    {
+        var currentUserId = GetUserIdFromClaims();
+        if (currentUserId == Guid.Empty)
+            return Unauthorized();
+
+        var result = await _blockService.UnblockAsync(currentUserId, id, ct);
+
+        if (!result.Succeeded)
+            return BadRequest(new { error = result.Error });
+
+        return NoContent();
     }
 
 }

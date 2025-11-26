@@ -8,7 +8,7 @@ public interface IUserService
     Task<Result<UserProfileDto>> GetUserProfileAsync(Guid profileUserId, Guid currentUserId, CancellationToken ct);
     Task<Result<UserProfileDto>> GetCurrentUserProfileAsync(Guid id, CancellationToken ct);
     Task<Result> UpdateProfileAsync(Guid id, UpdateProfileRequest request, CancellationToken ct);
-    Task<Result<List<UserSummaryDto>>> SearchUsersAsync(string? query, CancellationToken ct);
+    Task<Result<List<UserSummaryDto>>> SearchUsersAsync(Guid currentUserId,string? query, CancellationToken ct);
     Task<Result<string>> UpdateAvatarAsync(Guid userId, string avatarUrl, CancellationToken ct);
 
 }

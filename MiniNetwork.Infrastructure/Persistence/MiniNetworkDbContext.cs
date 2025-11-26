@@ -17,6 +17,7 @@ public class MiniNetworkDbContext : DbContext
     public DbSet<UserRole> UserRoles => Set<UserRole>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
     public DbSet<UserToken> UserTokens => Set<UserToken>();
+    public DbSet<Block> Blocks => Set<Block>();
 
     public DbSet<Post> Posts => Set<Post>();
     public DbSet<Comment> Comments => Set<Comment>();
@@ -119,7 +120,21 @@ public class MiniNetworkDbContext : DbContext
         modelBuilder.Entity<Follow>()
             .HasIndex(f => new { f.FollowerId, f.CreatedAt });
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(MiniNetworkDbContext).Assembly);
+        modelBuilder.Entity<Block>()
+            .HasOne(b => b.Blocker)
+            .WithMany()     
+            .HasForeignKey(b => b.BlockerId)
+            .OnDelete(DeleteBehavior.NoAction);
 
+        modelBuilder.Entity<Block>()
+            .HasOne(b => b.Blocked)
+            .WithMany()
+            .HasForeignKey(b => b.BlockedId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<Block>()
+            .HasIndex(b => new { b.BlockerId, b.BlockedId })
+            .IsUnique();
     }
 
 }

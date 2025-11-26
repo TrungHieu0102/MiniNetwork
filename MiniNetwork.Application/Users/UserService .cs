@@ -13,15 +13,17 @@ public class UserService : IUserService
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly IFollowService _followService;
+    private readonly IBlockRepository _blockRepository;
     public UserService(
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
-        IMapper mapper, IFollowService followService)
+        IMapper mapper, IFollowService followService, IBlockRepository blockRepository)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _mapper = mapper;
         _followService = followService;
+        _blockRepository = blockRepository;
     }
 
     public async Task<Result<UserProfileDto>> GetCurrentUserProfileAsync(
@@ -49,7 +51,12 @@ public class UserService : IUserService
 
         if (user is null || user.IsDeleted)
             return Result<UserProfileDto>.Failure("User not found.");
-
+        if (currentUserId != Guid.Empty && currentUserId != profileUserId)
+        {
+            var isBlocked = await _blockRepository.IsBlockedBetweenAsync(currentUserId, profileUserId, ct);
+            if (isBlocked)
+                return Result<UserProfileDto>.Failure("User not found.");
+        }
         var dto = _mapper.Map<UserProfileDto>(user);
         if (currentUserId != Guid.Empty && currentUserId != profileUserId)
         {
@@ -91,13 +98,21 @@ public class UserService : IUserService
         return Result.Success();
     }
 
-    public async Task<Result<List<UserSummaryDto>>> SearchUsersAsync(
+    public async Task<Result<List<UserSummaryDto>>> SearchUsersAsync(Guid currentUserId,
+
      string? query,
      CancellationToken ct)
     {
         var users = await _userRepository.SearchAsync(query, 20, ct);
+        if (users.Count == 0)
+            return Result<List<UserSummaryDto>>.Success(new List<UserSummaryDto>());
+        var blockedIds = await _blockRepository.GetBlockedUserIdsForAsync(currentUserId, ct);
+        var blockedSet = new HashSet<Guid>(blockedIds);
+        var visibleUsers = users
+         .Where(u => u.Id != currentUserId && !blockedSet.Contains(u.Id))
+         .ToList();
 
-        var dto = _mapper.Map<List<UserSummaryDto>>(users);
+        var dto = _mapper.Map<List<UserSummaryDto>>(visibleUsers);
 
         return Result<List<UserSummaryDto>>.Success(dto);
     }
