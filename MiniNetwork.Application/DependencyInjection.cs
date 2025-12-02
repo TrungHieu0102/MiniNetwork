@@ -6,6 +6,7 @@ using MiniNetwork.Application.Blocks;
 using MiniNetwork.Application.Common.Mapping;
 using MiniNetwork.Application.Follows;
 using MiniNetwork.Application.Notifications;
+using MiniNetwork.Application.Posts;
 using MiniNetwork.Application.Users;
 namespace MiniNetwork.Application;
 
@@ -23,7 +24,8 @@ public static class DependencyInjection
         services.AddScoped<INotificationService, NotificationService>();
         //Block
         services.AddScoped<IBlockService, BlockService>();
-
+        //Post
+        services.AddScoped<IPostService, PostService>();
         // AutoMapper
         var mapperConfig = new MapperConfiguration(cfg =>   
         {
