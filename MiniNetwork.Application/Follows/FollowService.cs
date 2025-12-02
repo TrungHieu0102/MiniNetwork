@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MiniNetwork.Application.Common;
 using MiniNetwork.Application.Interfaces.Repositories;
+using MiniNetwork.Application.Notifications;
 using MiniNetwork.Application.Users.DTOs;
 using MiniNetwork.Domain.Entities;
 using MiniNetwork.Domain.Enums;
@@ -8,13 +9,14 @@ using System;
 
 namespace MiniNetwork.Application.Follows
 {
-    public class FollowService(IFollowRepository followRepository, IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper, IBlockRepository blockRepository) : IFollowService
+    public class FollowService(IFollowRepository followRepository, IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper, IBlockRepository blockRepository, INotificationService notificationService) : IFollowService
     {
         private readonly IFollowRepository _followRepository = followRepository;
         private readonly IUserRepository _userRepository = userRepository;
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
         private readonly IBlockRepository _blockRepository = blockRepository;
         private readonly IMapper _mapper = mapper;
+        private readonly INotificationService _notificationService = notificationService;
 
         public async Task<Result> FollowAsync(Guid currentUserId, Guid targetUserId, CancellationToken ct)
         {
@@ -47,6 +49,7 @@ namespace MiniNetwork.Application.Follows
             );
             await _followRepository.AddAsync(follow, ct);
             await _unitOfWork.SaveChangesAsync(ct);
+            await _notificationService.CreateFollowNotificationAsync(currentUserId, targetUserId, ct);
             return Result.Success();
         }
 
@@ -97,12 +100,12 @@ namespace MiniNetwork.Application.Follows
         }
 
         public async Task<Result<PagedResult<UserSummaryDto>>> GetFollowersAsync(
-     Guid profileUserId,
-     Guid viewerUserId,
-     string? query,
-     int page,
-     int pageSize,
-     CancellationToken ct)
+                 Guid profileUserId,
+                 Guid viewerUserId,
+                 string? query,
+                 int page,
+                 int pageSize,
+                 CancellationToken ct)
         {
             if (profileUserId == Guid.Empty)
                 return Result<PagedResult<UserSummaryDto>>.Failure("UserId không hợp lệ.");

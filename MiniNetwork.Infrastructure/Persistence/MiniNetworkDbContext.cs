@@ -23,6 +23,8 @@ public class MiniNetworkDbContext : DbContext
     public DbSet<Comment> Comments => Set<Comment>();
     public DbSet<PostLike> PostLikes => Set<PostLike>();
     public DbSet<Follow> Follows => Set<Follow>();
+    public DbSet<Notification> Notifications => Set<Notification>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -109,7 +111,7 @@ public class MiniNetworkDbContext : DbContext
 
         modelBuilder.Entity<UserToken>()
             .HasOne(ut => ut.User)
-            .WithMany() 
+            .WithMany()
             .HasForeignKey(ut => ut.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
@@ -122,7 +124,7 @@ public class MiniNetworkDbContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(MiniNetworkDbContext).Assembly);
         modelBuilder.Entity<Block>()
             .HasOne(b => b.Blocker)
-            .WithMany()     
+            .WithMany()
             .HasForeignKey(b => b.BlockerId)
             .OnDelete(DeleteBehavior.NoAction);
 
@@ -135,6 +137,31 @@ public class MiniNetworkDbContext : DbContext
         modelBuilder.Entity<Block>()
             .HasIndex(b => new { b.BlockerId, b.BlockedId })
             .IsUnique();
+        //Notification
+        modelBuilder.Entity<Notification>()
+            .HasOne(n => n.Recipient)
+            .WithMany()
+            .HasForeignKey(n => n.RecipientId)
+            .OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<Notification>()
+            .HasOne(n => n.Actor)
+            .WithMany()
+            .HasForeignKey(n => n.ActorId)
+            .OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<Notification>()
+            .HasOne(n => n.Post)
+            .WithMany()
+            .HasForeignKey(n => n.PostId)
+            .OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<Notification>()
+            .HasOne(n => n.Comment)
+            .WithMany()
+            .HasForeignKey(n => n.CommentId)
+            .OnDelete(DeleteBehavior.NoAction);
+        // Index box for notification and user
+        modelBuilder.Entity<Notification>()
+            .HasIndex(n => new { n.RecipientId, n.IsRead, n.CreatedAt });
+
     }
 
 }

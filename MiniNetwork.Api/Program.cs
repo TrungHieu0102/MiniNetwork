@@ -1,9 +1,12 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MiniNetwork.Api.Hubs;
+using MiniNetwork.Api.Realtime;
 using MiniNetwork.Application;
+using MiniNetwork.Application.Notifications;
 using MiniNetwork.Infrastructure;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -92,13 +95,25 @@ builder.Services
             }
         };
     });
-
-// Authorization
-builder.Services.AddAuthorization(options =>
+builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AdminOnly", policy =>
-        policy.RequireRole("Admin"));
+    options.AddPolicy("DefaultCors", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:3000", "http://localhost:5500", "http://127.0.0.1:5500")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
 });
+// Authorization
+builder.Services.AddAuthorizationBuilder()
+                    // Authorization
+                    .AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("Admin"));
+builder.Services.AddScoped<INotificationPublisher, SignalRNotificationPublisher>();
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -110,10 +125,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("DefaultCors");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<NotificationHub>("/hubs/notifications").RequireAuthorization();
 
 app.Run();

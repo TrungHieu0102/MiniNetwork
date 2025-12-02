@@ -55,6 +55,8 @@ public static class DependencyInjection
         //Google Login
         services.Configure<GoogleAuthOptions>(configuration.GetSection("GoogleAuth"));
         services.AddScoped<IBlockRepository, BlockRepository>();
+        //Notification Repository   
+        services.AddScoped<INotificationRepository, NotificationRepository>();
 
         return services;
         

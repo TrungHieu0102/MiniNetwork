@@ -2,8 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using MiniNetwork.Application.Auth;
+using MiniNetwork.Application.Blocks;
 using MiniNetwork.Application.Common.Mapping;
 using MiniNetwork.Application.Follows;
+using MiniNetwork.Application.Notifications;
 using MiniNetwork.Application.Users;
 namespace MiniNetwork.Application;
 
@@ -17,8 +19,13 @@ public static class DependencyInjection
         services.AddScoped<IUserService, UserService>();
         //Follow
         services.AddScoped<IFollowService, FollowService>();
+        //Notification
+        services.AddScoped<INotificationService, NotificationService>();
+        //Block
+        services.AddScoped<IBlockService, BlockService>();
+
         // AutoMapper
-        var mapperConfig = new MapperConfiguration(cfg =>
+        var mapperConfig = new MapperConfiguration(cfg =>   
         {
             cfg.AddProfile<MappingProfile>();
         }, NullLoggerFactory.Instance);
