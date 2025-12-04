@@ -19,6 +19,8 @@ public class MiniNetworkDbContext : DbContext
     public DbSet<Comment> Comments => Set<Comment>();
     public DbSet<PostLike> PostLikes => Set<PostLike>();
     public DbSet<Follow> Follows => Set<Follow>();
+    public DbSet<PostImage> PostImages => Set<PostImage>();
+
     public DbSet<Notification> Notifications => Set<Notification>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

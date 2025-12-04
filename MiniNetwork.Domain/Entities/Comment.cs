@@ -19,6 +19,8 @@ public class Comment : SoftDeletableEntity
 
     public Comment(Guid postId, Guid authorId, string content, Guid? parentCommentId = null)
     {
+        if (string.IsNullOrWhiteSpace(content))
+            throw new ArgumentException("Content is required.", nameof(content));
         PostId = postId;
         AuthorId = authorId;
         SetContent(content);
@@ -33,4 +35,5 @@ public class Comment : SoftDeletableEntity
         Content = content;
         MarkUpdated(AuthorId);
     }
+    
 }

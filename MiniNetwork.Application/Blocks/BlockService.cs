@@ -11,7 +11,6 @@ public class BlockService : IBlockService
     private readonly IUserRepository _userRepository;
     private readonly IFollowRepository _followRepository;
     private readonly IUnitOfWork _unitOfWork;
-
     public BlockService(
         IBlockRepository blockRepository,
         IUserRepository userRepository,

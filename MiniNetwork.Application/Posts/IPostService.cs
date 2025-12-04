@@ -4,6 +4,7 @@ using MiniNetwork.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MiniNetwork.Application.Posts
 {
@@ -21,5 +22,8 @@ namespace MiniNetwork.Application.Posts
 
         Task<Result> DeleteAsync(Guid postId, Guid userId, CancellationToken ct = default);
         Task<Result<IReadOnlyList<PostDto>>> GetUserPostsAsync( Guid authorId, int page, int pageSize,CancellationToken ct = default);
+        Task<Result> LikePostAsync(Guid postId, Guid userId, CancellationToken ct);
+        Task<Result> UnlikePostAsync(Guid postId, Guid userId, CancellationToken ct = default);
+        Task<Result<IReadOnlyList<PostLikerDto>>> GetPostLikersAsync(Guid postId, CancellationToken ct = default);
     }
 }

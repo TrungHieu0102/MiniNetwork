@@ -11,11 +11,13 @@ namespace MiniNetwork.Application.Posts
         private readonly IPostRepository _postRepository;
         private readonly IFileStorageService _fileStorageService;
         private readonly IUnitOfWork _unitOfWork;
-        public PostService(IPostRepository postRepository, IFileStorageService fileStorageService, IUnitOfWork unitOfWork)
+        private readonly IBlockRepository _blockRepository;
+        public PostService(IPostRepository postRepository, IFileStorageService fileStorageService, IUnitOfWork unitOfWork, IBlockRepository blockRepository)
         {
             _postRepository = postRepository;
             _fileStorageService = fileStorageService;
             _unitOfWork = unitOfWork;
+            _blockRepository = blockRepository;
         }
 
         public async Task<Result> AddImagesAsync(Guid postId, Guid userId, IEnumerable<Stream> images, CancellationToken ct = default)
@@ -41,8 +43,6 @@ namespace MiniNetwork.Application.Posts
         public async Task<Result<PostDto>> CreateAsync(Guid userId, string content, IEnumerable<Stream>? images, CancellationToken ct = default)
         {
             var post = new Post(userId, content);
-            await _postRepository.AddAsync(post, ct);
-            await _unitOfWork.SaveChangesAsync(ct);
             if (images != null && images.Any())
             {
                 foreach (var image in images)
@@ -52,11 +52,11 @@ namespace MiniNetwork.Application.Posts
                     var url = await _fileStorageService.UploadAsync(image, key, "image/jpeg", ct);
                     post.AddImage(url);
                 }
-                await _unitOfWork.SaveChangesAsync(ct);
             }
+            await _postRepository.AddAsync(post, ct);
+            await _unitOfWork.SaveChangesAsync(ct);
 
             var dto = MapToDto(post);
-
             return Result<PostDto>.Success(dto);
         }
 
@@ -122,20 +122,6 @@ namespace MiniNetwork.Application.Posts
             if (string.IsNullOrWhiteSpace(ext)) ext = ".png";
             return $"posts/{postId}/{Guid.NewGuid()}{ext}";
         }
-        private static PostDto MapToDto(Post post)
-        {
-            return new PostDto
-            {
-                Id = post.Id,
-                AuthorId = post.AuthorId,
-                Content = post.Content,
-                AuthorName = post.Author?.UserName ?? "",
-                Images = post.Images.Select(i => i.Url).ToList(),
-                CommentsCount = post.Comments.Count,
-                LikesCount = post.Likes.Count,
-                CreatedAt = post.CreatedAt
-            };
-        }
 
         public async Task<Result<IReadOnlyList<PostDto>>> GetUserPostsAsync(Guid authorId, int page, int pageSize, CancellationToken ct = default)
         {
@@ -154,5 +140,77 @@ namespace MiniNetwork.Application.Posts
 
             return Result<IReadOnlyList<PostDto>>.Success(dtos);
         }
+        public async Task<Result> LikePostAsync(Guid postId, Guid userId, CancellationToken ct = default)
+        {
+            var post = await _postRepository.GetByIdAsync(postId, ct);
+            if (post == null)
+                return Result.Failure("Post not found !");
+
+            bool isBlocked = await _blockRepository.IsBlockedBetweenAsync(post.AuthorId, userId, ct);
+            if (isBlocked)
+                return Result.Failure("You cannot interact with this user.");
+
+            if (post.Visibility == Domain.Enums.PostVisibility.Private)
+                return Result.Failure("You can not like private post");
+
+            await _postRepository.AddLikeAsync(postId, userId, ct);
+
+            await _unitOfWork.SaveChangesAsync(ct);
+            return Result.Success();
+        }
+
+        public async Task<Result> UnlikePostAsync(Guid postId, Guid userId, CancellationToken ct = default)
+        {
+            var post = await _postRepository.GetByIdAsync(postId, ct);
+            if (post == null)
+                return Result.Failure("Post not found !");
+
+            var isBlocked = await _blockRepository.IsBlockedBetweenAsync(post.AuthorId, userId, ct);
+            if (isBlocked)
+                return Result.Failure("You cannot interact with this user.");
+            await _postRepository.RemoveLikeAsync(postId, userId, ct);
+            await _unitOfWork.SaveChangesAsync(ct);
+            return Result.Success();
+        }
+
+        public async Task<Result<IReadOnlyList<PostLikerDto>>> GetPostLikersAsync(Guid postId, CancellationToken ct = default)
+        {
+            var post = await _postRepository.GetDetailAsync(postId, ct);
+            if (post == null)
+                return Result<IReadOnlyList<PostLikerDto>>.Failure("Post not found.");
+
+            var likers = post.Likes
+                .Select(l => new PostLikerDto
+                {
+                    UserId = l.UserId,
+                    UserName = l.User?.UserName ?? string.Empty
+                })
+                .ToList()
+                .AsReadOnly();
+
+            return Result<IReadOnlyList<PostLikerDto>>.Success(likers);
+        }
+
+        private static PostDto MapToDto(Post post)
+        {
+            return new PostDto
+            {
+                Id = post.Id,
+                AuthorId = post.AuthorId,
+                Content = post.Content,
+                AuthorName = post.Author?.UserName ?? "",
+                Images = [.. post.Images.Select(i => i.Url)],
+                CommentsCount = post.Comments.Count,
+                LikesCount = post.Likes.Count,
+                CreatedAt = post.CreatedAt,
+                Likers = [.. post.Likes
+                    .Select(l => new PostLikerDto
+                    {
+                        UserId = l.UserId,
+                        UserName = l.User?.UserName ?? string.Empty
+                    })]
+            };
+        }
+
     }
 }

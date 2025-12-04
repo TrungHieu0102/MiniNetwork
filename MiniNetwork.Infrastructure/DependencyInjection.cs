@@ -8,6 +8,7 @@ using MiniNetwork.Infrastructure.Auth;
 using MiniNetwork.Infrastructure.Email;
 using MiniNetwork.Infrastructure.Persistence;
 using MiniNetwork.Infrastructure.Repositories;
+using MiniNetwork.Infrastructure.Seeding;
 using MiniNetwork.Infrastructure.Storage;
 using MiniNetwork.Infrastructure.Uow;
 namespace MiniNetwork.Infrastructure;
@@ -58,6 +59,9 @@ public static class DependencyInjection
         services.AddScoped<IBlockRepository, BlockRepository>();
         //Notification Repository   
         services.AddScoped<INotificationRepository, NotificationRepository>();
+        //Comment Repository
+        services.AddScoped<ICommentRepository, CommentRepository>();
+        services.AddScoped<DataSeeder>();
 
         return services;
         

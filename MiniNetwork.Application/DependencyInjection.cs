@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using MiniNetwork.Application.Auth;
 using MiniNetwork.Application.Blocks;
+using MiniNetwork.Application.Comments;
 using MiniNetwork.Application.Common.Mapping;
 using MiniNetwork.Application.Follows;
 using MiniNetwork.Application.Notifications;
@@ -26,6 +27,8 @@ public static class DependencyInjection
         services.AddScoped<IBlockService, BlockService>();
         //Post
         services.AddScoped<IPostService, PostService>();
+        //Comment
+        services.AddScoped<ICommentService, CommentService>();
         // AutoMapper
         var mapperConfig = new MapperConfiguration(cfg =>   
         {

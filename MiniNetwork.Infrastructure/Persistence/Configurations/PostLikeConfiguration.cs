@@ -9,6 +9,9 @@ public class PostLikeConfiguration : IEntityTypeConfiguration<PostLike>
     {
         builder.HasIndex(pl => new { pl.PostId, pl.UserId }).IsUnique();
 
+        builder.Property(x => x.CreatedAt)
+               .IsRequired();
+
         builder.HasOne(pl => pl.User)
             .WithMany(u => u.Likes)
             .HasForeignKey(pl => pl.UserId)

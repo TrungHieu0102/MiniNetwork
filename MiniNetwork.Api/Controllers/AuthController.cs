@@ -29,7 +29,7 @@ public class AuthController : ControllerBase
 
     [HttpPost("login")]
     [AllowAnonymous]
-    public async Task<IActionResult> Login(LoginRequest request, CancellationToken ct)
+    public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken ct)
     {
         var ip = HttpContext.Connection.RemoteIpAddress?.ToString();
         var result = await _authService.LoginAsync(request, ip, ct);
@@ -90,7 +90,6 @@ public class AuthController : ControllerBase
     CancellationToken ct)
     {
         var result = await _authService.ForgotPasswordAsync(request, ct);
-        // luôn trả 200 để tránh lộ email có tồn tại hay không
         return Ok();
     }
 

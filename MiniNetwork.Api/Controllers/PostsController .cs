@@ -115,6 +115,32 @@ namespace MiniNetwork.Api.Controllers
 
             return Ok(result.Data);
         }
+        [HttpPost("{postId:guid}/like")]
+        public async Task<IActionResult> LikePost(Guid postId, CancellationToken ct)
+        {
+            var user = GetUserIdFromClaims();
+            if (user == Guid.Empty) return Unauthorized();
+            var result = await _postServices.LikePostAsync(postId, user, ct);
+            if (!result.Succeeded) return BadRequest(new { error = result.Error });
+            return NoContent();
+
+        }
+        [HttpDelete("{postId:guid}/like")]
+        public async Task<IActionResult> UnlikePost(Guid postId, CancellationToken ct)
+        {
+            var user = GetUserIdFromClaims();
+            if (user == Guid.Empty) return Unauthorized();
+            var result = await _postServices.UnlikePostAsync(postId, user, ct);
+            if (!result.Succeeded) return BadRequest(new { error = result.Error });
+            return NoContent();
+        }
+        [HttpGet("{postId:guid}/likes")]
+        public async Task<IActionResult> GetPostLikers(Guid postId, CancellationToken ct)
+        {
+            var result = await _postServices.GetPostLikersAsync(postId, ct);
+            if (!result.Succeeded) return NotFound(new { error = result.Error });
+            return Ok(result.Data);
+        }
         private Guid GetUserIdFromClaims()
         {
             var userIdStr =

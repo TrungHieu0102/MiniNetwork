@@ -9,5 +9,8 @@ namespace MiniNetwork.Application.Interfaces.Repositories
     {
         Task<Post?> GetDetailAsync(Guid id, CancellationToken ct = default);
         Task<IReadOnlyList<Post>> GetPostsByUserAsync(Guid userId, int page, int pageSize, CancellationToken ct = default);
+        Task<bool> HasUserLikedAsync(Guid postId, Guid userId, CancellationToken ct = default);
+        Task AddLikeAsync(Guid postId, Guid userId, CancellationToken ct = default);
+        Task RemoveLikeAsync(Guid postId, Guid userId, CancellationToken ct = default);
     }
 }

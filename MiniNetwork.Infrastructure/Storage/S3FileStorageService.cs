@@ -42,7 +42,7 @@ public class S3FileStorageService : IFileStorageService
             InputStream = stream,
             ContentType = contentType,
             AutoCloseStream = false,
-           // CannedACL = S3CannedACL.PublicRead // cho phép public đọc ảnh avatar
+           //CannedACL = S3CannedACL.PublicRead // cho phép public đọc ảnh avatar
         };
 
         var response = await _s3.PutObjectAsync(request, ct);

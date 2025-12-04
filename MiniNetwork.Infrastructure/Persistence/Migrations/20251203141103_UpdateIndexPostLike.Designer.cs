@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiniNetwork.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using MiniNetwork.Infrastructure.Persistence;
 namespace MiniNetwork.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(MiniNetworkDbContext))]
-    partial class MiniNetworkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251203141103_UpdateIndexPostLike")]
+    partial class UpdateIndexPostLike
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

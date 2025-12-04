@@ -86,7 +86,7 @@ public class UsersController : ControllerBase
     }
 
     // GET api/users/{id}
-    [HttpGet("{id:guid}")]
+    [HttpGet("{profileUserId:guid}")]
     [Authorize]
     public async Task<IActionResult> GetById(Guid profileUserId, CancellationToken ct)
     {

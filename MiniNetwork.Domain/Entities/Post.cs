@@ -41,7 +41,7 @@ public class Post : SoftDeletableEntity
     public void AddImage(string url)
     {
         Images.Add(new PostImage(url));
-        MarkUpdated(AuthorId);
+        //MarkUpdated(AuthorId);
     }
 
     public void RemoveImage(Guid imageId)
@@ -50,12 +50,23 @@ public class Post : SoftDeletableEntity
         if (img is null) return;
 
         Images.Remove(img);
-        MarkUpdated(AuthorId);
+        //MarkUpdated(AuthorId);
     }
 
     public void ClearImages()
     {
         Images.Clear();
         MarkUpdated(AuthorId);
+    }
+    public void AddLike(Guid userId)
+    {
+        if (Likes.Any(l => l.UserId == userId)) return;
+        Likes.Add(new PostLike(Id, userId));
+    }
+    public void RemoveLike(Guid userId)
+    {
+        var like = Likes.FirstOrDefault(l => l.UserId == userId);
+        if (like is null) return;
+        Likes.Remove(like);
     }
 }

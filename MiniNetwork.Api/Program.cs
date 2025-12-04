@@ -6,6 +6,7 @@ using MiniNetwork.Api.Realtime;
 using MiniNetwork.Application;
 using MiniNetwork.Application.Notifications;
 using MiniNetwork.Infrastructure;
+using MiniNetwork.Infrastructure.Seeding;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -131,5 +132,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapHub<NotificationHub>("/hubs/notifications").RequireAuthorization();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var seeder = scope.ServiceProvider.GetRequiredService<DataSeeder>();
+//    await seeder.SeedAsync();
+//}
 
 app.Run();
