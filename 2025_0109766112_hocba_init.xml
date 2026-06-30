@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<HOC_BA xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DU_LIEU_HOC_BA Id="data">
+    <THONG_TIN_HOC_BA Id="data-hbs">
+      <THONG_TIN_CHUNG>
+        <PHIEN_BAN>1.0</PHIEN_BAN>
+        <THONG_TU>22</THONG_TU>
+        <MA_DINH_DANH_HOC_BA>0048f708-175e-480b-88cf-f73d5593b2b0</MA_DINH_DANH_HOC_BA>
+        <TEN_NAM_HOC>2025-2026</TEN_NAM_HOC>
+        <TEN_SO_GD>Sở Giáo dục và Đào tạo Thành phố Hà Nội</TEN_SO_GD>
+        <MA_SO_GD>01</MA_SO_GD>
+        <TEN_TRUONG>TH-THCS-THPT TEST</TEN_TRUONG>
+        <MA_DDTC />
+        <MA_TRUONG>0100004015</MA_TRUONG>
+        <MA_XA_PHUONG>00316</MA_XA_PHUONG>
+        <TEN_XA_PHUONG>Phường DEMO</TEN_XA_PHUONG>
+        <MA_TINH_THANH_PHO>01</MA_TINH_THANH_PHO>
+        <TEN_TINH_THANH_PHO>Thành phố Hà Nội</TEN_TINH_THANH_PHO>
+        <MA_CAP_HOC>03</MA_CAP_HOC>
+        <SO_SO_DANG_BO />
+        <HO_VA_TEN>Lê Hiền Anh</HO_VA_TEN>
+        <SO_CCCD>229538704621</SO_CCCD>
+        <MA_HOC_SINH>0109766112</MA_HOC_SINH>
+        <GIOI_TINH>Nam</GIOI_TINH>
+        <NGAY_SINH>27/02/2011</NGAY_SINH>
+        <NOI_SINH>Bệnh viện Lê Lợi - Vũng Tàu</NOI_SINH>
+        <QUE_QUAN>Phường DEMO, Thành phố Hà Nội</QUE_QUAN>
+        <CHO_O_HIEN_NAY>GA2806, đường 3/2</CHO_O_HIEN_NAY>
+        <DAN_TOC>Kinh</DAN_TOC>
+        <QUOC_TICH>Việt Nam</QUOC_TICH>
+        <IS_KHUYET_TAT_KHONG_DANH_GIA>0</IS_KHUYET_TAT_KHONG_DANH_GIA>
+        <DOI_TUONG_DIEN_CHINH_SACH />
+        <HO_VA_TEN_CHA>Cao Đức Nghĩa</HO_VA_TEN_CHA>
+        <NGHE_NGHIEP_CHA>tự do</NGHE_NGHIEP_CHA>
+        <HO_VA_TEN_ME>Nguyễn Thị Linh</HO_VA_TEN_ME>
+        <NGHE_NGHIEP_ME>Tự do</NGHE_NGHIEP_ME>
+        <HO_VA_TEN_NGUOI_GIAM_HO />
+        <TEN_GIAM_HIEU_KY_HOC_BA>Lê Thị Yến</TEN_GIAM_HIEU_KY_HOC_BA>
+        <SO_CCCD_GIAM_HIEU_KY_HOC_BA>871611528414</SO_CCCD_GIAM_HIEU_KY_HOC_BA>
+        <CHUC_VU_GIAM_HIEU_KY_HOC_BA>Hiệu trưởng</CHUC_VU_GIAM_HIEU_KY_HOC_BA>
+        <TEN_GIAO_VIEN_CHU_NHIEM>Đặng Văn Tuấn</TEN_GIAO_VIEN_CHU_NHIEM>
+        <SO_CCCD_GIAO_VIEN_CHU_NHIEM>492268059820</SO_CCCD_GIAO_VIEN_CHU_NHIEM>
+        <DIA_DANH_PHAT_HANH_HOC_BA>Thành phố Hà Nội</DIA_DANH_PHAT_HANH_HOC_BA>
+        <NGAY_TAO_HOC_BA>29/06/2026</NGAY_TAO_HOC_BA>
+        <NGAY_KY_PHAT_HANH_HOC_BA />
+        <MA_KHOI>09</MA_KHOI>
+        <TEN_LOP>9A01</TEN_LOP>
+      </THONG_TIN_CHUNG>
+      <QUA_TRINH_HOC_TAP>
+        <QUA_TRINH>
+          <NAM_HOC>2025-2026</NAM_HOC>
+          <TEN_LOP>9A01</TEN_LOP>
+          <TEN_TRUONG>TH-THCS-THPT Khai Nguyên</TEN_TRUONG>
+        </QUA_TRINH>
+      </QUA_TRINH_HOC_TAP>
+      <TONG_KET>
+        <BANG_DIEM>
+          <DIEM_TONG_KET Id="_229538704621-19">
+            <MA_MON_HOC>19</MA_MON_HOC>
+            <TEN_MON_HOC>Ngữ văn</TEN_MON_HOC>
+            <DIEM_HOC_KY1>5.6</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>6</DIEM_HOC_KY2>
+            <DIEM_CN>5.9</DIEM_CN>
+            <NHAN_XET_MON_HOC>Cố gắng học tập. Hoàn thành các công việc được giao. Kỹ năng viết cần
+              được rèn luyện thêm.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-15">
+            <MA_MON_HOC>15</MA_MON_HOC>
+            <TEN_MON_HOC>Toán</TEN_MON_HOC>
+            <DIEM_HOC_KY1>5.2</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>6</DIEM_HOC_KY2>
+            <DIEM_CN>5.7</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em học tập tích cực, hiểu bài tốt, nhưng đôi lúc còn thiếu cẩn thận
+              khi tính toán.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-69">
+            <MA_MON_HOC>69</MA_MON_HOC>
+            <TEN_MON_HOC>Ngoại ngữ 1</TEN_MON_HOC>
+            <DIEM_HOC_KY1>8.2</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>8.5</DIEM_HOC_KY2>
+            <DIEM_CN>8.4</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em học tốt, phát triển đều các kĩ năng, cần tích cực phát biểu hơn
+              trong giờ học.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-26">
+            <MA_MON_HOC>26</MA_MON_HOC>
+            <TEN_MON_HOC>Giáo dục công dân</TEN_MON_HOC>
+            <DIEM_HOC_KY1>7.8</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>8.3</DIEM_HOC_KY2>
+            <DIEM_CN>8.1</DIEM_CN>
+            <NHAN_XET_MON_HOC>Hoàn thành tốt nội dung môn học.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-05">
+            <MA_MON_HOC>05</MA_MON_HOC>
+            <TEN_MON_HOC>Lịch sử và Địa lí</TEN_MON_HOC>
+            <DIEM_HOC_KY1>9</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>7.1</DIEM_HOC_KY2>
+            <DIEM_CN>7.7</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em tham gia học tập tích cực, hiểu bài, nhưng còn hạn chế trong phân
+              tích và đánh giá vấn đề.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-66">
+            <MA_MON_HOC>66</MA_MON_HOC>
+            <TEN_MON_HOC>Khoa học tự nhiên</TEN_MON_HOC>
+            <DIEM_HOC_KY1>7.1</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>7.1</DIEM_HOC_KY2>
+            <DIEM_CN>7.1</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em nắm vững kiến thức trọng tâm, có ý thức học tập tốt, song còn hạn
+              chế trong việc vận dụng kiến thức vào bài toán thực tế.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-27">
+            <MA_MON_HOC>27</MA_MON_HOC>
+            <TEN_MON_HOC>Công nghệ</TEN_MON_HOC>
+            <DIEM_HOC_KY1>8.5</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>9.2</DIEM_HOC_KY2>
+            <DIEM_CN>9</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em có nhiều cố gắng trong học tập, kết quả được cải thiện, cần phát
+              huy tính chủ động hơn nữa.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-32">
+            <MA_MON_HOC>32</MA_MON_HOC>
+            <TEN_MON_HOC>Tin học</TEN_MON_HOC>
+            <DIEM_HOC_KY1>7.1</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>6.2</DIEM_HOC_KY2>
+            <DIEM_CN>6.5</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em nắm được nội dung về AI, chatbot, thuật toán nhưng vận dụng còn hạn
+              chế, cần tăng cường thực hành và chủ động học hỏi thêm.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-88">
+            <MA_MON_HOC>88</MA_MON_HOC>
+            <TEN_MON_HOC>Giáo dục thể chất</TEN_MON_HOC>
+            <DIEM_HOC_KY1>Đ</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>Đ</DIEM_HOC_KY2>
+            <DIEM_CN>Đ</DIEM_CN>
+            <NHAN_XET_MON_HOC>Tham gia đầy đủ các buổi học, thực hiện tốt các kỹ năng vận động cơ
+              bản, có ý thức rèn luyện sức khỏe thường xuyên.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-97">
+            <MA_MON_HOC>97</MA_MON_HOC>
+            <TEN_MON_HOC>Nghệ thuật (Âm nhạc, Mĩ thuật)</TEN_MON_HOC>
+            <DIEM_HOC_KY1>Đ</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>Đ</DIEM_HOC_KY2>
+            <DIEM_CN>Đ</DIEM_CN>
+            <NHAN_XET_MON_HOC>Hoàn thành tốt chương trình học, có giọng hát truyền cảm và thái độ
+              học tập cầu tiến, trách nhiệm trong các bài tập nhóm.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-91">
+            <MA_MON_HOC>91</MA_MON_HOC>
+            <TEN_MON_HOC>Hoạt động trải nghiệm, hướng nghiệp</TEN_MON_HOC>
+            <DIEM_HOC_KY1>Đ</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>Đ</DIEM_HOC_KY2>
+            <DIEM_CN>Đ</DIEM_CN>
+            <NHAN_XET_MON_HOC>Em có tiến bộ rõ trong hoạt động trải nghiệm, cần rèn luyện thêm kỹ
+              năng quản lý thời gian và tổ chức công việc.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-99">
+            <MA_MON_HOC>99</MA_MON_HOC>
+            <TEN_MON_HOC>Nội dung giáo dục của địa phương</TEN_MON_HOC>
+            <DIEM_HOC_KY1>Đ</DIEM_HOC_KY1>
+            <DIEM_HOC_KY2>Đ</DIEM_HOC_KY2>
+            <DIEM_CN>Đ</DIEM_CN>
+            <NHAN_XET_MON_HOC>Tích cực tham gia học tập, có ý thức tìm hiểu văn hóa và lịch sử địa
+              phương.</NHAN_XET_MON_HOC>
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM>
+              <GVBM Id="593050714486">Hoàng Văn Việt</GVBM>
+            </DANH_SACH_GVBM>
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-14">
+            <MA_MON_HOC>14</MA_MON_HOC>
+            <TEN_MON_HOC>Tiếng dân tộc thiểu số</TEN_MON_HOC>
+            <DIEM_HOC_KY1 />
+            <DIEM_HOC_KY2 />
+            <DIEM_CN />
+            <NHAN_XET_MON_HOC />
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM />
+          </DIEM_TONG_KET>
+          <DIEM_TONG_KET Id="_229538704621-31">
+            <MA_MON_HOC>31</MA_MON_HOC>
+            <TEN_MON_HOC>Ngoại ngữ 2</TEN_MON_HOC>
+            <DIEM_HOC_KY1 />
+            <DIEM_HOC_KY2 />
+            <DIEM_CN />
+            <NHAN_XET_MON_HOC />
+            <DIEM_KIEM_TRA_LAI />
+            <DANH_SACH_GVBM />
+          </DIEM_TONG_KET>
+        </BANG_DIEM>
+        <DANH_GIA_KET_QUA_HOC_TAP>
+          <KET_QUA_REN_LUYEN_HOC_KY_1>T</KET_QUA_REN_LUYEN_HOC_KY_1>
+          <KET_QUA_REN_LUYEN_HOC_KY_2>T</KET_QUA_REN_LUYEN_HOC_KY_2>
+          <KET_QUA_REN_LUYEN_CA_NAM>T</KET_QUA_REN_LUYEN_CA_NAM>
+          <KET_QUA_HOC_TAP_HOC_KY_1>K</KET_QUA_HOC_TAP_HOC_KY_1>
+          <KET_QUA_HOC_TAP_HOC_KY_2>Đ</KET_QUA_HOC_TAP_HOC_KY_2>
+          <KET_QUA_HOC_TAP_CA_NAM>K</KET_QUA_HOC_TAP_CA_NAM>
+          <TONG_SO_BUOI_NGHI_HOC_CA_NAM>0</TONG_SO_BUOI_NGHI_HOC_CA_NAM>
+          <KET_QUA_REN_LUYEN_LAI_TRONG_HE />
+          <KET_QUA_HOC_TAP_LAI_TRONG_HE />
+        </DANH_GIA_KET_QUA_HOC_TAP>
+        <DUOC_LEN_LOP>1</DUOC_LEN_LOP>
+        <NOI_DUNG_DUOC_LEN_LOP>Được lên lớp</NOI_DUNG_DUOC_LEN_LOP>
+        <NOI_DUNG_HOAN_THANH_CHUONG_TRINH />
+        <CHUNG_CHI>
+          <TEN_CHUNG_CHI />
+          <LOAI_CHUNG_CHI />
+        </CHUNG_CHI>
+        <KET_QUA_THAM_GIA_CAC_CUOC_THI />
+        <NOI_DUNG_KHEN_THUONG />
+        <NOI_DUNG_KET_QUA_REN_LUYEN_TRONG_HE />
+        <NHAN_XET_GVCN>Không có nhận xét</NHAN_XET_GVCN>
+      </TONG_KET>
+    </THONG_TIN_HOC_BA>
+    <DANH_SACH_THONG_TIN_KY>
+      <DANH_SACH_GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-19">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-15">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-69">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-26">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-05">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-66">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-27">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-32">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-88">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-97">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-91">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+        <GVBM Id="593050714486">
+          <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+              <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+              <Reference URI="#_229538704621-99">
+                <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Gud99HydomR9a0apWERFREgfGVWnLMHP6AezyRF6THw=</DigestValue>
+              </Reference>
+              <Reference URI="#SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>Hsstsvb5wFpAKrkT4Y7kCTvS5rsecd+d1Lc5riSGS4s=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>
+              XyitK5yiJcp1l4wIa18YE2Ym5W/RwQv46K4KMCmIksjHO1BRgLaE4gLanJVRY01pHId+wKFca5HuhY29oQNaccZGtxWxCxxFwpINyBGdxZPM0FovXQY682W75ZuGmpznhqJu5YunZlrXFXhgWYWXQHUqtGsEAeDi8jtvUS4UAPu6GQOncaw7hGlFionbY40om7RSa1IdWfszlhpzf1r8gIc6WGUL2gOPWEbIxt9BW5R0vG87nw/MztnVvJd++QWSsm81uRlL7m5WRTQnQduFrA2jB6LSobYs9WJLDbdiLjPUws/xK62M1AG4Vl5eTmwXjYRI0k5uryKaK7PbF0jYsw==</SignatureValue>
+            <KeyInfo>
+              <KeyValue>
+                <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                  <Modulus>
+                    xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                  <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+              </KeyValue>
+              <X509Data>
+                <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=Hoàng Văn Việt,
+                  OID.0.9.2342.19200300.100.1.1=CCCD:593050714486</X509SubjectName>
+                <X509Certificate>
+                  MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+            <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+              Id="SigningTime-779cdf20-b42a-4de6-9d78-4bc90ae7879a">
+              <SignatureProperties xmlns="">
+                <SignatureProperty Target="#cd21d0df-ac4d-4c4f-bfaf-6a65f6caf4c5">
+                  <SigningTime>2026-06-20T21:15:58</SigningTime>
+                </SignatureProperty>
+              </SignatureProperties>
+            </Object>
+          </Signature>
+        </GVBM>
+      </DANH_SACH_GVBM>
+      <GVCN Id="492268059820">
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+          Id="799a86c9-d8de-4599-ab09-a93e0443dcaa">
+          <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="#data-hbs">
+              <Transforms>
+                <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+              </Transforms>
+              <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+              <DigestValue>Fnx/KbDKlpBPFnsDXkujH18E1FOfxyI+FCIGjyYBmhQ=</DigestValue>
+            </Reference>
+            <Reference URI="#SigningTime-871723b0-22f6-4492-b138-c267f81afda6">
+              <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+              <DigestValue>NgrIUxPWBvSeUTm6RYOJaw3z2rGNuykd4vQzhSnDnnI=</DigestValue>
+            </Reference>
+          </SignedInfo>
+          <SignatureValue>
+            gnCajOSw9RAqF03vcoyHkt4XhYRZznEewdUTqvn1l2C9va0x0to/12mzp4xISjHCTCbBT4aE64xxKpqA8asY9+I3dhVu2tHeYZRnNq89aGb26ut0a/A45fNK6ozXXvi9i3lyxJbRXyBiXGlqa/2wuoQD98diKBgDyh7msXN5P943MmBNrjyNeVthxAKgCoUfhfwJLTer+CdVhOOJt2QtCpKld/kjhHRZfmnL/RR1PCAgUpLKvAMFMh9RyBt6LrFdfCAAK4TF0nzRLUt5vT/NhupW5j4E6czwPeZGpDxYkIjjRsp8tW3iZGAIi8N6a66xnCXrtV/buRYV37+bNf4JaQ==</SignatureValue>
+          <KeyInfo>
+            <KeyValue>
+              <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <Modulus>
+                  xAMDTu80Vo3CaOVc58W0WGIElpMX0oiHcPu7zGj1x3JOR6VDXycVOTZCPSvBgcRSFRk4JrQEEfk1GRFoLAIcN34Sr3cjML41B6ASgzgTHN5x2dG/m1biiZZoAs37pfWcfh+du7o67DcEyl0aQ0++QP8vXGmc8ptl0IvXHW4pzjg+UwB9cv5MiPcYc31gVKR5GJSOe3JHuKBSrIhEo/ErFFTXYRoU2n9bHIvYgibNSEeefoY7X30AOD8GMr91gRP82HD56EE4UsOt188b6QwUbRRAaepxKP1Evr7lXcJWZhlNBYudfhLUR84+INbPcRoYGMt+bFA/1YseAwvPQaHWzw==</Modulus>
+                <Exponent>AQAB</Exponent>
+              </RSAKeyValue>
+            </KeyValue>
+            <X509Data>
+              <X509SubjectName>C=VN, S=Hà Nội, L=Phường Chợ Quán, CN=HÀ TRUNG HIẾU,
+                OID.0.9.2342.19200300.100.1.1=CCCD:492268059820</X509SubjectName>
+              <X509Certificate>
+                MIIFQTCCBCmgAwIBAgIQVAEBAbuyIB2f5/Fpi4NgEjANBgkqhkiG9w0BAQsFADBcMQswCQYDVQQGEwJWTjEzMDEGA1UECgwqVklFVE5BTSBQT1NUUyBBTkQgVEVMRUNPTU1VTklDQVRJT05TIEdST1VQMRgwFgYDVQQDDA9WTlBUIFNtYXJ0Q0EgUlMwHhcNMjYwNTI2MTI0MDE5WhcNMjYwNjI2MTI0MDE5WjCBhDELMAkGA1UEBhMCVk4xFzAVBgNVBAgMDkjhu5MgQ2jDrSBNaW5oMR4wHAYDVQQHDBVQaMaw4budbmcgQ2jhu6MgUXXDoW4xGTAXBgNVBAMMEEjDgCBUUlVORyBISeG6vlUxITAfBgoJkiaJk/IsZAEBDBFDQ0NEOjA5MTIwMjAxMjkzMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQDA07vNFaNwmjlXOfFtFhiBJaTF9KIh3D7u8xo9cdyTkelQ18nFTk2Qj0rwYHEUhUZOCa0BBH5NRkRaCwCHDd+Eq93IzC+NQegEoM4ExzecdnRv5tW4omWaALN+6X1nH4fnbu6Ouw3BMpdGkNPvkD/L1xpnPKbZdCL1x1uKc44PlMAfXL+TIj3GHN9YFSkeRiUjntyR7igUqyIRKPxKxRU12EaFNp/WxyL2IImzUhHnn6GO199ADg/BjK/dYET/Nhw+ehBOFLDrdfPG+kMFG0UQGnqcSj9RL6+5V3CVmYZTQWLnX4S1EfOPiDWz3EaGBjLfmxQP9WLHgMLz0Gh1s8CAwEAAaOCAdQwggHQMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUX+/E6zr2Ivdy0toZPCklWbug/S8wgYAGCCsGAQUFBwEBBHQwcjA6BggrBgEFBQcwAoYuaHR0cDovL3B1Yi52bnB0LWNhLnZuL2NlcnRzL3ZucHRjYS1zbWFydGNhLmNlcjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Atc21hcnRjYS52bnB0LWNhLnZuL3Jlc3BvbmRlcjAjBgNVHREEHDAagRhoYXRydW5naGlldTEyMUBnbWFpbC5jb20wHwYDVR0lBBgwFgYIKwYBBQUHAwQGCisGAQQBgjcKAwwwgaYGA1UdHwSBnjCBmzCBmKA0oDKGMGh0dHA6Ly9jcmwtc21hcnRjYS52bnB0LWNhLnZuL3ZucHRjYS1zbWFydGNhLmNybKJgpF4wXDEYMBYGA1UEAwwPVk5QVCBTbWFydENBIFJTMTMwMQYDVQQKDCpWSUVUTkFNIFBPU1RTIEFORCBURUxFQ09NTVVOSUNBVElPTlMgR1JPVVAxCzAJBgNVBAYTAlZOMB0GA1UdDgQWBBSicTNFZ/v4we54ObSOj86jYth9LTAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggEBAIZcr5ynlexa7W/SSU7CXr9uxl6GGGxQzTqrbtRUiAMiQFrcWSfUELD04lVBGQin4VzsBy/nIGOcDuwYyBvkWfX4jCCqS386kceP5H1j5clwIFBx0PIAiZGAsdpdaWAbXW/iL82IsgAPzyA35zx4LhYKUOyJLKLTdDABJEyQwOrsGbxsbNX6wOhVm/IK2EghWZ8Gu1yUebGtJ6BHVm3S7zhj5mhKAXu36pj39oVHaR/6MaMeqSdfhZafYAtYHs4KoB5sABfPpgsvAia27jxCuAO6/iHGIxFH1Combar7Lw80eztMcNlY3C6mpUCiMJtWJba7DNhyBnzhZVL/yJ2oRUk=</X509Certificate>
+            </X509Data>
+          </KeyInfo>
+          <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+            Id="SigningTime-871723b0-22f6-4492-b138-c267f81afda6">
+            <SignatureProperties xmlns="">
+              <SignatureProperty Target="#799a86c9-d8de-4599-ab09-a93e0443dcaa">
+                <SigningTime>2026-06-22T09:25:59</SigningTime>
+              </SignatureProperty>
+            </SignatureProperties>
+          </Object>
+        </Signature>
+      </GVCN>
+    </DANH_SACH_THONG_TIN_KY>
+  </DU_LIEU_HOC_BA>
+  <PHAT_HANH_HOC_BA>
+    <CBQL Id="871611528414">
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+        Id="0a882e26-206c-40cf-8441-9edae8f477f6">
+        <SignedInfo>
+          <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+          <Reference URI="#data_7970128098">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>KyWEQqDfjN5h0f1raRQGuJ4cmtsnxM8AqauiybSdaxI=</DigestValue>
+          </Reference>
+          <Reference URI="#SigningTime-29cd8c1a-82e9-400c-9a77-7a298918ac13">
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>V5tl3OfRO0w5InA1eqi3w9268MgCTVqw+1UXk0QjrwE=</DigestValue>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue>
+          cpOkjvLCeLf7VllxxiAojixkealGADkIpfXSCdNhk+Ia7gUT5NoGG/YadYmyX+OaZYoOn7gV9D9DhwITaXdcAgmtTmHwObduXxPhNewJUqXVqTuuagx2MsuCzszAcQZRtzrp6NKHhwvHOMnrtqWubsU7fLorfu25oUHNmWF7Uda+zIiRxbLquHz+KcybOcsymut4CLuO8eF3Lm2xonI4btlOOkBE+m63Nu9U7w+cRCgKvxRwBJqvpWQYTJ9eVmcVOgqG0zOjrjXsPoUsW1SOso6D/49WwKESiITfH/xRCQcdWsrVWohGfexONm/XJG801OMKE4GwyPcvWoIunYmDKw==</SignatureValue>
+        <KeyInfo>
+          <KeyValue>
+            <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+              <Modulus>
+                qVHBb5MQuwrzvnK7GYxGOoKllQHpXHbRB7E4UzpmK9bAGG5dIMXjg59xgF/ElWnrPxwpQWjcKMtMRvdYmRh0g0obVBb0TcrCMX3xLxikyDYgsMOGD8THywn8tteOe+7D6MUU+3mU6wfqRRSTurgQ6LtsDh+s1BP8W5a6Qu17IwfAw8kR9PMrImOXS7SrMn4fzFH1QyunLLhtzx6du9/klViiro60+26Y6OOUJxfmQwdQOS4FaoxMPBp0XlYgoNVGc/ut6SW/N1BHgUqswsYZOIYnpRj00O5O8PufZ46Dsd7magh+kET5qFF09gtV8nbLTiEAjL8iBlMnihOQzwMYZQ==</Modulus>
+              <Exponent>AQAB</Exponent>
+            </RSAKeyValue>
+          </KeyValue>
+          <X509Data>
+            <X509SubjectName>C=VN, L=TPHCM, CN=CÔNG TY CỔ PHẦN TITKUL,
+              OID.0.9.2342.19200300.100.1.1=MST:0316382034</X509SubjectName>
+            <X509Certificate>
+              MIIExzCCA6+gAwIBAgIQVAT//rcDP7MktyjTwuz3rjANBgkqhkiG9w0BAQsFADA/MRgwFgYDVQQDDA9WaWV0dGVsLUNBIFNIQTIxFjAUBgNVBAoMDVZpZXR0ZWwgR3JvdXAxCzAJBgNVBAYTAlZOMB4XDTI1MDkxMTA5NTUwMFoXDTI2MDkxMTA5NTUwMFowYzELMAkGA1UEBhMCVk4xDjAMBgNVBAcMBVRQSENNMSQwIgYDVQQDDBtDw5RORyBUWSBD4buUIFBI4bqmTiBUSVRLVUwxHjAcBgoJkiaJk/IsZAEBDA5NU1Q6MDMxNjM4MjAzNDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKlRwW+TELsK875yuxmMRjqCpZUB6Vx20QexOFM6ZivWwBhuXSDF44OfcYBfxJVp6z8cKUFo3CjLTEb3WJkYdINKG1QW9E3KwjF98S8YpMg2ILDDhg/Ex8sJ/LbXjnvuw+jFFPt5lOsH6kUUk7q4EOi7bA4frNQT/FuWukLteyMHwMPJEfTzKyJjl0u0qzJ+H8xR9UMrpyy4bc8enbvf5JVYoq6OtPtumOjjlCcX5kMHUDkuBWqMTDwadF5WIKDVRnP7reklvzdQR4FKrMLGGTiGJ6UY9NDuTvD7n2eOg7He5moIfpBE+ahRdPYLVfJ2y04hAIy/IgZTJ4oTkM8DGGUCAwEAAaOCAZkwggGVMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUQ9U1AIu+B7rjTeYeJFlWiFu+zEoweQYIKwYBBQUHAQEEbTBrMEIGCCsGAQUFBzAChjZodHRwOi8vdmlldHRlbC1jYS52bi9kb3dubG9hZHMvc3ViL1ZpZXR0ZWwtQ0FfU0hBMi5jcnQwJQYIKwYBBQUHMAGGGWh0dHA6Ly9vY3NwLnZpZXR0ZWwtY2Eudm4wMwYDVR0lBCwwKgYIKwYBBQUHAwIGCCsGAQUFBwMEBgorBgEEAYI3CgMMBggrBgEFBQcDJDCBhAYDVR0fBH0wezB5oDKgMIYuaHR0cDovL2NybC52aWV0dGVsLWNhLnZuL1ZpZXR0ZWwtQ0EtU0hBMi0yLmNybKJDpEEwPzEYMBYGA1UEAwwPVmlldHRlbC1DQSBTSEEyMRYwFAYDVQQKDA1WaWV0dGVsIEdyb3VwMQswCQYDVQQGEwJWTjAdBgNVHQ4EFgQULDwfnlFvKrx9Kr9NkFYPhTf1GMYwDgYDVR0PAQH/BAQDAgXgMA0GCSqGSIb3DQEBCwUAA4IBAQCqbkF+cVUBBPtLxSKX9swG7YYHxhB2KhfpvD7wsLqEBqqn+DleeHl7jtvt5kK5D/XI2Ovb9xnkk6BKoHYLTLNehPQwxep/e6JvsWoH6AYridNLqhMHop1+9kqHJHo9xnlBkpKZvA2GDKwFxkn9xOZ1TxAqsfwJX5XpECazpvE3hWXI3Q4RnzUEVxXUogPEv76VeWkfEYi2BkG7zTkZT7X55PsHooeGD2R2QGwMgiTW6ulymN+xm3/CovaEsrlIWfxBNrRJxuoh63eY+rSMRvQWCtbNfKMIXzmVWFRMOHbxkqcdAkcMbCjngUpFtxw11N8MCT2Hnby0uKtjhpLvAVBX</X509Certificate>
+          </X509Data>
+        </KeyInfo>
+        <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+          Id="SigningTime-29cd8c1a-82e9-400c-9a77-7a298918ac13">
+          <SignatureProperties xmlns="">
+            <SignatureProperty Target="#0a882e26-206c-40cf-8441-9edae8f477f6">
+              <SigningTime>2026-06-29T11:49:14+07:00</SigningTime>
+            </SignatureProperty>
+          </SignatureProperties>
+        </Object>
+      </Signature>
+    </CBQL>
+    <KY_PHAT_HANH>
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"
+        Id="cbd5f718-e34d-4a35-a673-fc4370af3b66">
+        <SignedInfo>
+          <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+          <Reference URI="#data_7970128098">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>KyWEQqDfjN5h0f1raRQGuJ4cmtsnxM8AqauiybSdaxI=</DigestValue>
+          </Reference>
+          <Reference URI="#SigningTime-feab57be-81eb-446e-8d39-a258ee90f10a">
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>oxWRX+L4dW+fW8o25xG72S5xfZ2p3WS4XJ3V5KL4Y5c=</DigestValue>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue>
+          ZLJ6MACdoSvM0ttIcK+p6u9lqFQsxhOj+LReZJ0HpquMMeabP8dxhY7X/pQ/bR/qlgvCKew2ISdqLU//upfB5Voso5dsbBtufw6C3DY2pvIUs6tpG7n+EmGUyqZk/GgAc3xjwl212heoRYhflxiNvFssan+x9FLBmlz1hgpvMIuq6t2y6+n/87TwnOGL4frn1BorJtuKOgq9kxGtBzPNw3y/MDGRLh8mU16nWZhEhs8C5qYdEUeWFWj2GnGgXfyQTLvXLQPi2D9RB//X9ropzHqPUzbpnEGQHMZ2/5BPDjilfStqa/fPRzS9kJy/HIlYaTgQ/eUpalw1LtgVm/a0Bg==</SignatureValue>
+        <KeyInfo>
+          <KeyValue>
+            <RSAKeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+              <Modulus>
+                qVHBb5MQuwrzvnK7GYxGOoKllQHpXHbRB7E4UzpmK9bAGG5dIMXjg59xgF/ElWnrPxwpQWjcKMtMRvdYmRh0g0obVBb0TcrCMX3xLxikyDYgsMOGD8THywn8tteOe+7D6MUU+3mU6wfqRRSTurgQ6LtsDh+s1BP8W5a6Qu17IwfAw8kR9PMrImOXS7SrMn4fzFH1QyunLLhtzx6du9/klViiro60+26Y6OOUJxfmQwdQOS4FaoxMPBp0XlYgoNVGc/ut6SW/N1BHgUqswsYZOIYnpRj00O5O8PufZ46Dsd7magh+kET5qFF09gtV8nbLTiEAjL8iBlMnihOQzwMYZQ==</Modulus>
+              <Exponent>AQAB</Exponent>
+            </RSAKeyValue>
+          </KeyValue>
+          <X509Data>
+            <X509SubjectName>C=VN, L=TPHCM, CN=CÔNG TY CỔ PHẦN TITKUL,
+              OID.0.9.2342.19200300.100.1.1=MST:0316382034</X509SubjectName>
+            <X509Certificate>
+              MIIExzCCA6+gAwIBAgIQVAT//rcDP7MktyjTwuz3rjANBgkqhkiG9w0BAQsFADA/MRgwFgYDVQQDDA9WaWV0dGVsLUNBIFNIQTIxFjAUBgNVBAoMDVZpZXR0ZWwgR3JvdXAxCzAJBgNVBAYTAlZOMB4XDTI1MDkxMTA5NTUwMFoXDTI2MDkxMTA5NTUwMFowYzELMAkGA1UEBhMCVk4xDjAMBgNVBAcMBVRQSENNMSQwIgYDVQQDDBtDw5RORyBUWSBD4buUIFBI4bqmTiBUSVRLVUwxHjAcBgoJkiaJk/IsZAEBDA5NU1Q6MDMxNjM4MjAzNDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKlRwW+TELsK875yuxmMRjqCpZUB6Vx20QexOFM6ZivWwBhuXSDF44OfcYBfxJVp6z8cKUFo3CjLTEb3WJkYdINKG1QW9E3KwjF98S8YpMg2ILDDhg/Ex8sJ/LbXjnvuw+jFFPt5lOsH6kUUk7q4EOi7bA4frNQT/FuWukLteyMHwMPJEfTzKyJjl0u0qzJ+H8xR9UMrpyy4bc8enbvf5JVYoq6OtPtumOjjlCcX5kMHUDkuBWqMTDwadF5WIKDVRnP7reklvzdQR4FKrMLGGTiGJ6UY9NDuTvD7n2eOg7He5moIfpBE+ahRdPYLVfJ2y04hAIy/IgZTJ4oTkM8DGGUCAwEAAaOCAZkwggGVMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUQ9U1AIu+B7rjTeYeJFlWiFu+zEoweQYIKwYBBQUHAQEEbTBrMEIGCCsGAQUFBzAChjZodHRwOi8vdmlldHRlbC1jYS52bi9kb3dubG9hZHMvc3ViL1ZpZXR0ZWwtQ0FfU0hBMi5jcnQwJQYIKwYBBQUHMAGGGWh0dHA6Ly9vY3NwLnZpZXR0ZWwtY2Eudm4wMwYDVR0lBCwwKgYIKwYBBQUHAwIGCCsGAQUFBwMEBgorBgEEAYI3CgMMBggrBgEFBQcDJDCBhAYDVR0fBH0wezB5oDKgMIYuaHR0cDovL2NybC52aWV0dGVsLWNhLnZuL1ZpZXR0ZWwtQ0EtU0hBMi0yLmNybKJDpEEwPzEYMBYGA1UEAwwPVmlldHRlbC1DQSBTSEEyMRYwFAYDVQQKDA1WaWV0dGVsIEdyb3VwMQswCQYDVQQGEwJWTjAdBgNVHQ4EFgQULDwfnlFvKrx9Kr9NkFYPhTf1GMYwDgYDVR0PAQH/BAQDAgXgMA0GCSqGSIb3DQEBCwUAA4IBAQCqbkF+cVUBBPtLxSKX9swG7YYHxhB2KhfpvD7wsLqEBqqn+DleeHl7jtvt5kK5D/XI2Ovb9xnkk6BKoHYLTLNehPQwxep/e6JvsWoH6AYridNLqhMHop1+9kqHJHo9xnlBkpKZvA2GDKwFxkn9xOZ1TxAqsfwJX5XpECazpvE3hWXI3Q4RnzUEVxXUogPEv76VeWkfEYi2BkG7zTkZT7X55PsHooeGD2R2QGwMgiTW6ulymN+xm3/CovaEsrlIWfxBNrRJxuoh63eY+rSMRvQWCtbNfKMIXzmVWFRMOHbxkqcdAkcMbCjngUpFtxw11N8MCT2Hnby0uKtjhpLvAVBX</X509Certificate>
+          </X509Data>
+        </KeyInfo>
+        <Object xmlns="http://www.w3.org/2000/09/xmldsig#"
+          Id="SigningTime-feab57be-81eb-446e-8d39-a258ee90f10a">
+          <SignatureProperties xmlns="">
+            <SignatureProperty Target="#cbd5f718-e34d-4a35-a673-fc4370af3b66">
+              <SigningTime>2026-06-30T10:53:23+07:00</SigningTime>
+            </SignatureProperty>
+          </SignatureProperties>
+        </Object>
+      </Signature>
+    </KY_PHAT_HANH>
+  </PHAT_HANH_HOC_BA>
+</HOC_BA>
+ 
